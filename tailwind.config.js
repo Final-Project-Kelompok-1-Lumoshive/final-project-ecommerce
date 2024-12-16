@@ -9,13 +9,12 @@ export default {
       'inter': ['Inter', 'sans-serif'],
       'poppins': ['Poppins', 'sans-serif']
     },
-    colors: {
-      'black': '#000000',
-      'red': '#DB4444',
-      'green': '#00FF66',
-      'white': '#FFFFFF',
+    extend: {
+      colors: {
+        'red': '#DB4444',
+        'green': '#00FF66',
+      },
     },
-    extend: {},
   },
   plugins: [],
 }
