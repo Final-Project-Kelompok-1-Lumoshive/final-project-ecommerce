@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  div,
+  h1,
+  ul,
+  img {
+    @apply border border-black border-opacity-30;
+  }
+  body {
+    /* @apply font-main; */
+  }
+}
