@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import ProductCard from "../components/ProductCard";
 
 const HomePage = () => {
   const { data } = useSelector((state) => state.fetch);
@@ -12,6 +13,7 @@ const HomePage = () => {
           <div key={index}>{item}</div>
         ))}
       </div> */}
+      <ProductCard />
     </div>
   );
 };
