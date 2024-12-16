@@ -5,6 +5,10 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'inter': ['Inter', 'sans-serif'],
+      'poppins': ['Poppins', 'sans-serif']
+    },
     colors: {
       'black': '#000000',
       'red': '#DB4444',

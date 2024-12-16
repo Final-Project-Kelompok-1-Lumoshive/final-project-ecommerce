@@ -1,8 +1,11 @@
 import React from "react";
+import TitleSection from "../components/TitleSection";
 
 const HomePage = () => {
   return (
-    <div></div>
+    <div>
+        <TitleSection section="Categories" title="Browse By Category" />
+    </div>
   );
 };
 
