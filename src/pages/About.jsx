@@ -3,11 +3,12 @@ import { useLocation } from "react-router-dom";
 import Teams from "../components/Teams.jsx";
 
 import { PiCurrencyCircleDollarLight } from "react-icons/pi";
-import { CiShop } from "react-icons/ci";
 
 import about from '../assets/about.png'
 import shop from '../assets/icon_shop.svg'
 import bag from '../assets/Icon-Shopping bag.svg'
+import moneybag from '../assets/money-bag.svg'
+import dollarbag from '../assets/dollar-bag.svg'
 import delivery from '../assets/icon-delivery.svg'
 import customer from '../assets/Icon-Customer service.svg'
 import secure from '../assets/Icon-secure.svg'
@@ -44,7 +45,9 @@ const About = () => {
       </div>
       <div className="font-inter grid grid-cols-4 gap-14 my-32">
         <div className="group border border-black/[.3] hover:border-red rounded-md text-center py-14 hover:bg-red hover:text-white hover:shadow-xl duration-200">
-            <CiShop className="text-black bg-black group-hover:bg-white text-white text-6xl group-hover:text-black p-2 rounded-full outline outline-8 outline-black/[.3] group-hover:outline-white/[.3] mx-auto mb-8 duration-200" />
+        <div className="w-fit mx-auto bg-black group-hover:bg-white outline outline-8 outline-black/[.3] group-hover:outline-white/[.3] p-2 mb-8 rounded-full duration-200">
+            <img src={shop} alt="" className="mx-auto group-hover:brightness-0 duration-200" />
+        </div>
             <h2 className="font-inter font-bold text-3xl my-2">10.5k</h2>
             <p className="font-poppins">Sallers active our site</p>
         </div>
@@ -54,12 +57,17 @@ const About = () => {
             <p className="font-poppins">Monthly Product Sale</p>
         </div>
         <div className="group border border-black/[.3] hover:border-red rounded-md text-center py-14 hover:bg-red hover:text-white hover:shadow-xl duration-200">
-            <img src={bag} alt="" className="text-black bg-black group-hover:bg-white group-hover:text-black p-2 rounded-full outline outline-8 outline-black/[.3] group-hover:outline-white/[.3] mx-auto mb-8 group-hover:brightness-0 duration-200" />
+        <div className="w-fit mx-auto bg-black group-hover:bg-white outline outline-8 outline-black/[.3] group-hover:outline-white/[.3] p-2 mb-8 rounded-full duration-200">
+            <img src={bag} alt="" className="mx-auto group-hover:brightness-0 duration-200" />
+        </div>
             <h2 className="font-inter font-bold text-3xl my-2">45.5k</h2>
             <p className="font-poppins">Customer active in our site</p>
         </div>
         <div className="group border border-black/[.3] hover:border-red rounded-md text-center py-14 hover:bg-red hover:text-white hover:shadow-xl duration-200">
-            <img src={shop} alt="" className="text-black bg-black group-hover:bg-white group-hover:text-black p-2 rounded-full outline outline-8 outline-black/[.3] group-hover:outline-white/[.3] mx-auto mb-8 duration-200" />
+        <div className="relative w-fit mx-auto bg-black group-hover:bg-white outline outline-8 outline-black/[.3] group-hover:outline-white/[.3] p-2 mb-8 rounded-full duration-200">
+            <img src={moneybag} alt="" className="mx-auto group-hover:brightness-0 duration-200" />
+            <img src={dollarbag} alt="" className="absolute brightness-0 group-hover:brightness-100 bottom-0 my-3 mx-2.5 group-hover:brightness-0 duration-200" />
+        </div>
             <h2 className="font-inter font-bold text-3xl my-2">25k</h2>
             <p className="font-poppins">Anual gross sale in our site</p>
         </div>

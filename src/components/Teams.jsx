@@ -15,7 +15,7 @@ const Teams = () => {
   const teams = [
     {
       name: "Tom Cruise",
-      position: "CEO",
+      position: "Founder & Chairman",
       img: "https://static.independent.co.uk/2022/05/19/19/1634b8eed67e000f880828c1232160b4Y29udGVudHNlYXJjaGFwaSwxNjUzMDcwNzEy-2.66984344.jpg",
       twitter: "https://twitter.com/johndoe",
       instagram: "https://instagram.com/johndoe",
@@ -23,7 +23,7 @@ const Teams = () => {
     },
     {
       name: "Emma Watson",
-      position: "CEO",
+      position: "Managing Director",
       img: "https://www.unwomen.org/sites/default/files/2022-10/UN-Women-Goodwill-Ambassador-Emma-Watson-Credit-Celeste-Sloman-853x1280.jpg",
       twitter: "https://twitter.com/johndoe",
       instagram: "https://instagram.com/johndoe",
@@ -31,7 +31,7 @@ const Teams = () => {
     },
     {
       name: "Will Smith",
-      position: "CEO",
+      position: "Product Designer",
       img: "https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/will_smith_1.jpg",
       twitter: "https://twitter.com/johndoe",
       instagram: "https://instagram.com/johndoe",
@@ -39,7 +39,7 @@ const Teams = () => {
     },
     {
       name: "Tom Cruise",
-      position: "CEO",
+      position: "Founder & Chairman",
       img: "https://static.independent.co.uk/2022/05/19/19/1634b8eed67e000f880828c1232160b4Y29udGVudHNlYXJjaGFwaSwxNjUzMDcwNzEy-2.66984344.jpg",
       twitter: "https://twitter.com/johndoe",
       instagram: "https://instagram.com/johndoe",
@@ -47,7 +47,7 @@ const Teams = () => {
     },
     {
       name: "Emma Watson",
-      position: "CEO",
+      position: "Managing Director",
       img: "https://www.unwomen.org/sites/default/files/2022-10/UN-Women-Goodwill-Ambassador-Emma-Watson-Credit-Celeste-Sloman-853x1280.jpg",
       twitter: "https://twitter.com/johndoe",
       instagram: "https://instagram.com/johndoe",
@@ -55,7 +55,7 @@ const Teams = () => {
     },
     {
       name: "Will Smith",
-      position: "CEO",
+      position: "Product Designer",
       img: "https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/will_smith_1.jpg",
       twitter: "https://twitter.com/johndoe",
       instagram: "https://instagram.com/johndoe",
