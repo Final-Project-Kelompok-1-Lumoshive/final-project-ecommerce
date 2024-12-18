@@ -19,7 +19,7 @@ const Banner = () => {
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination]}
-        className="rounded-xl overflow-hidden max-h-[30rem]"
+        className="overflow-hidden max-h-[30rem]"
       >
         {banners.map((banner, index) => (
           <SwiperSlide>
