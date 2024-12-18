@@ -7,6 +7,35 @@
   color: red;
 }
 
+.team-cstm .swiper-button-next, 
+.swiper-button-prev {
+  color: red;
+}
+
+.team-cstm .swiper-pagination {
+  margin-top: 3rem !important;
+  position: static !important;
+}
+
+.team-cstm .swiper-pagination-bullet {
+  background-color: black !important;
+  opacity: 30% !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.team-cstm .swiper-pagination-bullet-active {
+  background-color: #DB4444 !important;
+  border: 2px solid white !important;
+  outline: 2px solid rgba(0, 0, 0, 0.3);
+  opacity: 100% !important;
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center !important;
+}
+
 .swiper-pagination-bullet {
   background-color: white !important;
   opacity: 50% !important;
