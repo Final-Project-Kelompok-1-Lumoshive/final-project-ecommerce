@@ -1,7 +1,16 @@
-import React, { useEffect, useState } from "react";
-import Product1 from "../assets/img/product_1.jpg";
+import React from "react";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
+  const {
+    image,
+    title,
+    discount,
+    price,
+    priceBeforeDiscount,
+    rating,
+    reviews,
+  } = product;
+
   return (
     <section className="bg-white py-12 px-6">
       <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md group">
@@ -9,19 +18,18 @@ const ProductCard = () => {
           className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
           href="#"
         >
-          <img
-            className="object-cover w-full h-full"
-            src={Product1}
-            alt="product image"
-          />
+          {/* Product Image */}
+          <img className="object-cover w-full h-full" src={image} alt={title} />
 
           {/* Discount */}
-          <span className="absolute top-0 left-0 m-2 rounded-full bg-red px-2 text-center text-sm font-medium text-white">
-            39% OFF
-          </span>
+          {discount && (
+            <span className="absolute top-0 left-0 m-2 rounded-full bg-red px-2 text-center text-sm font-medium text-white">
+              {discount}% OFF
+            </span>
+          )}
 
           {/* Add to Cart Button Pop-up */}
-          <button className="absolute bottom-0 right-0 left-0 flex items-center justify-center bg-transparent text-white text-xs px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <button className="absolute bottom-0 right-0 left-0 flex items-center justify-center bg-black text-white text-xs px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <span className="flex items-center gap-1 font-medium">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,16 +52,16 @@ const ProductCard = () => {
 
         <div className="mt-4 px-5 pb-5">
           <a href="#">
-            <h5 className="text-xl tracking-tight text-slate-900">
-              The north coat
-            </h5>
+            <h5 className="text-xl tracking-tight text-slate-900">{title}</h5>
           </a>
           <div className="mt-2 mb-5 flex items-center justify-between">
             <p>
-              <span className="text-md font-bold text-black">$449</span>
-              <span className="text-md text-slate-900 line-through ml-2">
-                $699
-              </span>
+              <span className="text-md font-bold text-black">${price}</span>
+              {priceBeforeDiscount && (
+                <span className="text-md text-slate-900 line-through ml-2">
+                  ${priceBeforeDiscount}
+                </span>
+              )}
             </p>
 
             {/* Stars */}
@@ -64,8 +72,10 @@ const ProductCard = () => {
                   <svg
                     key={i}
                     aria-hidden="true"
-                    className="h-5 w-5 text-yellow-300"
-                    fill="orange"
+                    className={`h-5 w-5 ${
+                      i < rating ? "text-yellow-300" : "text-gray-300"
+                    }`}
+                    fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -73,9 +83,9 @@ const ProductCard = () => {
                   </svg>
                 ))}
 
-              {/* Total Rating */}
+              {/* Total Reviews */}
               <span className="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
-                (65)
+                ({reviews})
               </span>
             </div>
           </div>
