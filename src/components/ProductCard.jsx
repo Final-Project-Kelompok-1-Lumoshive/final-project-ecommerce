@@ -1,7 +1,9 @@
+
 import React, { useState } from "react";
 import { FaHeart, FaTrash } from "react-icons/fa";
 
 const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
+
   const {
     image,
     title,
@@ -11,6 +13,7 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
     rating,
     reviews,
   } = product;
+
 
   // Wishlist toggle handler
   const handleWishlist = () => {
@@ -110,6 +113,7 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
             <span className="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
               ({reviews})
             </span>
+
           </div>
         </div>
       </div>
