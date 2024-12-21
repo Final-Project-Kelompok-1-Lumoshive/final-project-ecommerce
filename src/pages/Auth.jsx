@@ -9,7 +9,7 @@ const Auth = () => {
   };
   return (
     <div className="flex justify-betweeen items-center">
-      <img src={auth} alt="" className="2xl:block hidden h-[50rem] -translate-x-32" />
+      <img src={auth} alt="" className="lg:block hidden max-w-xl xl:max-w-2xl -translate-x-32" />
       <form className="flex flex-col gap-12 w-full">
         <div className="flex flex-col gap-6">
           <h2 className="font-inter font-medium text-4xl">
