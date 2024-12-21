@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed flex w-full flex-col">
+    <nav className="fixed flex w-full flex-col z-50">
       <div className="bg-black text-white grid grid-cols-[1fr,2fr,1fr] justify-center items-center py-2">
         <div className="col-start-2 text-lg text-center">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
@@ -59,18 +60,10 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-4 text-black">
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/">About</a>
-            </li>
-            <li>
-              <a href="/">Contact</a>
-            </li>
-            <li>
-              <a href="/">Sign Up</a>
-            </li>
+            <Link to={"/"}><li>Home</li></Link>
+            <Link to={"/contact"}><li>Contact</li></Link>
+            <Link to={"/about"}><li>About</li></Link>
+            <Link to={"/auth"}><li>Sign Up</li></Link>
           </ul>
 
           {/* Search Box */}

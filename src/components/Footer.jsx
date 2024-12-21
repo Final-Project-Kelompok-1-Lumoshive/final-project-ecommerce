@@ -16,7 +16,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="relative font-poppins flex justify-between items-start bg-black text-white px-32 py-20 pb-28">
+    <div className="relative font-poppins flex justify-between items-start bg-black text-white px-24 py-20 pb-28">
       <div className="flex flex-col justify-center gap-6">
         <h3 className="text-2xl font-bold">Exclusive</h3>
         <h4 className="text-xl font-medium">Subscribe</h4>

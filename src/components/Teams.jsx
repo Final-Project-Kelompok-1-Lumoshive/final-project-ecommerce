@@ -73,13 +73,13 @@ const Teams = () => {
       {teams.map((team, index) => (
         <SwiperSlide
           key={index}
-          className="flex flex-col items-center justify-center"
+          className="flex flex-col items-center justify-center px-4"
         >
           <div>
             <img
               src={team.img}
               alt=""
-              className="w-96 h-[26rem] object-cover mb-8 rounded-lg"
+              className="w-96 h-[24rem] object-cover mb-8 rounded-lg"
             />
             <div className="flex flex-col items-start justify-center gap-2">
               <h2 className="font-inter font-medium text-3xl">{team.name}</h2>
