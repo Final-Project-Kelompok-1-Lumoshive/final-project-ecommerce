@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProductCard from "./ProductCard";
+import TitleSection from "./TitleSection";
 
 const AllProductSection = () => {
   // Updated product data
@@ -115,48 +116,74 @@ const AllProductSection = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = products.slice(startIndex, startIndex + itemsPerPage);
 
+  // Wishlist toggle handler
+  const [wishlist, setWishlist] = useState([]);
+
+  const toggleWishlist = (product) => {
+    if (wishlist.find((item) => item.id === product.id)) {
+      setWishlist((prev) => prev.filter((item) => item.id !== product.id));
+    } else {
+      setWishlist((prev) => [...prev, product]);
+    }
+  };
+
+  const isInWishlistSection = false;
+
   return (
     <section className="bg-white py-12 px-6">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Title and Description */}
-        <h2 className="text-3xl font-bold mb-4">All Products</h2>
-        <p className="text-lg mb-8">
-          The products we provide only for you as our service are selected from
-          the best products with number 1 quality in the world
-        </p>
+      <div className="max-w-6xl mx-auto">
+        {/* Title and Pagination Section */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+          {/* Title and Description */}
+          <TitleSection section={"Our Products"} title="Explore Our Products" />
+
+          {/* Pagination */}
+          <div className="flex justify-center items-center gap-4 mt-4 md:mt-0">
+            <button
+              onClick={handlePrevPage}
+              disabled={currentPage === 1}
+              className={`px-4 py-2 text-black-500 font-medium ${
+                currentPage === 1
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "hover:underline"
+              }`}
+            >
+              Prev
+            </button>
+            <button
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages}
+              className={`px-4 py-2 text-black-500 font-medium ${
+                currentPage === totalPages
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "hover:underline"
+              }`}
+            >
+              Next
+            </button>
+          </div>
+        </div>
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {currentItems.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              inWishlist={isInWishlistSection}
+              onToggleWishlist={toggleWishlist}
+            />
           ))}
         </div>
 
-        {/* Pagination */}
-        <div className="flex justify-center items-center gap-4 mt-8">
-          <button
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-            className={`px-4 py-2 text-black-500 font-medium ${
-              currentPage === 1
-                ? "text-gray-400 cursor-not-allowed"
-                : "hover:underline"
-            }`}
+        {/* View All Products Button */}
+        <div className="text-center mt-8">
+          <a
+            href=""
+            className="px-4 py-2 text-white bg-red rounded-md hover:bg-gray-800"
           >
-            Prev
-          </button>
-
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className={`px-4 py-2 text-black-500 font-medium ${
-              currentPage === totalPages
-                ? "text-gray-400 cursor-not-allowed"
-                : "hover:underline"
-            }`}
-          >
-            Next
-          </button>
+            View all Products
+          </a>
         </div>
       </div>
     </section>
