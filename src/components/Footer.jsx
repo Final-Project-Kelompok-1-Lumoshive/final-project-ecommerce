@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import DOMPurify from "dompurify";
 
 import plane from "../assets/plane.svg";
 import qrcode from "../assets/qrcode.png";
@@ -15,42 +16,71 @@ import {
 } from "react-icons/ri";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleChange = (e) => {
+    const sanitizedValue = DOMPurify.sanitize(e.target.value);
+    setEmail(sanitizedValue);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setEmail("");
+  };
   return (
-    <div className="relative font-poppins flex justify-between items-start bg-black text-white px-32 py-20 pb-28">
-      <div className="flex flex-col justify-center gap-6">
-        <h3 className="text-2xl font-bold">Exclusive</h3>
-        <h4 className="text-xl font-medium">Subscribe</h4>
-        <p>Get 10% off your first order</p>
-        <form className="relative border-2 border-white rounded-md p-1 min-w-56">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="bg-black rounded-md outline-0 p-2 max-w-36"
-          />
-          <button className="absolute bottom-0 top-0 right-4 bg-black">
-            <img src={plane} alt="" />
-          </button>
-        </form>
+    <div className="relative font-poppins flex flex-wrap justify-between items-start gap-8 bg-black text-white lg:px-24 px-6 py-20 pb-28">
+      <div className="max-md:order-1 flex max-md:justify-between items-center max-md:w-full">
+        <div className="flex flex-col justify-center gap-6">
+          <h3 className="text-2xl font-bold">Exclusive</h3>
+          <h4 className="text-xl font-medium">Subscribe</h4>
+          <p>Get 10% off your first order</p>
+          <form onSubmit={handleSubmit} className="relative border-2 border-white rounded-md p-1 min-w-56">
+            <input
+              type="email"
+              value={email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              className="bg-black rounded-md outline-0 p-2 max-w-36"
+            />
+            <button className="absolute bottom-0 top-0 right-4 bg-black">
+              <img src={plane} alt="" />
+            </button>
+          </form>
+        </div>
+        <div className="flex md:hidden flex-col justify-between gap-6">
+          <a href="">
+            <RiFacebookLine className="text-2xl" />
+          </a>
+          <a href="">
+            <RiInstagramLine className="text-2xl" />
+          </a>
+          <a href="">
+            <RiTwitterLine className="text-2xl" />
+          </a>
+          <a href="">
+            <RiLinkedinLine className="text-2xl" />
+          </a>
+        </div>
       </div>
-      <div className="flex flex-col justify-center gap-6">
+      <div className="max-md:order-3 flex flex-col justify-center gap-6 max-md:min-w-48">
         <h3 className="text-2xl font-medium">Support</h3>
         <p className="max-w-36">
           Jl. Gatot Subroto Jakarta, 12930, Indonesia. exclusive@gmail.com
         </p>
         <a href="tel:+62815-8888-9999">+62815-8888-9999</a>
       </div>
-      <div className="flex flex-col justify-center gap-6">
-        <h3 className="text-2xl font-medium">Exclusive</h3>
+      <div className="max-md:order-4 flex flex-col justify-center gap-6">
+        <h3 className="text-2xl font-medium">Account</h3>
         <ul className="flex flex-col gap-4">
-          <Link className="hover:underline">My Account</Link>
+          <Link to={"/account/profile"} className="hover:underline">My Account</Link>
           <Link className="hover:underline">Login / Register</Link>
           <Link className="hover:underline">Cart</Link>
           <Link className="hover:underline">Wishlist</Link>
           <Link className="hover:underline">Shop</Link>
         </ul>
       </div>
-      <div className="flex flex-col justify-center gap-6">
-        <h3 className="text-2xl font-medium">Exclusive</h3>
+      <div className="max-md:order-2 flex flex-col justify-center gap-6">
+        <h3 className="text-2xl font-medium">Quick Link</h3>
         <ul className="flex flex-col gap-4">
           <Link className="hover:underline">Privacy Policy</Link>
           <Link className="hover:underline">Term Of Use</Link>
@@ -58,8 +88,8 @@ const Footer = () => {
           <Link className="hover:underline">Contact</Link>
         </ul>
       </div>
-      <div className="flex flex-col justify-center gap-6">
-        <h3 className="text-2xl font-medium">Exclusive</h3>
+      <div className="max-md:order-5 flex flex-col justify-center gap-6">
+        <h3 className="text-2xl font-medium">Download App</h3>
         <p className="text-xs text-white/[.7]">
           Save $3 with App New User Only
         </p>
@@ -76,7 +106,7 @@ const Footer = () => {
             />
           </a>
         </div>
-        <div className="flex gap-6 w-48">
+        <div className="md:flex hidden gap-6 w-48">
           <a href="">
             <RiFacebookLine className="text-2xl" />
           </a>

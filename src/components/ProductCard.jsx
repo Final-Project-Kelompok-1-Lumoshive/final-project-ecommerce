@@ -64,7 +64,10 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
         {/* Wishlist/Trash Icon */}
         <button
           className="absolute top-0 right-0 m-2 rounded-full bg-white p-2 shadow-md z-10"
-          onClick={handleWishlist}
+          onClick={(event) => {
+            event.stopPropagation(); // Prevent click propagation
+            handleWishlist();
+          }}
         >
           {isWishlisted ? (
             isInWishlistSection ? (
@@ -102,11 +105,14 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
         </button>
       </a>
 
+      {/* Product Details */}
       <div className="mt-4 px-5 pb-5">
         <a href="#">
           <h5 className="text-xl tracking-tight text-slate-900">{title}</h5>
         </a>
+        {/* Price and Rating Section */}
         <div className="mt-2 mb-5 flex items-center justify-between">
+          {/* Price */}
           <p>
             <span className="text-md font-bold text-black">${price}</span>
             {priceBeforeDiscount && (
@@ -116,7 +122,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
             )}
           </p>
 
-          {/* Stars */}
+          {/* Rating */}
           <div className="flex items-center">
             {Array(5)
               .fill(0)
