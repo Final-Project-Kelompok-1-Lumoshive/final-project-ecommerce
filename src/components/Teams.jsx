@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -62,10 +62,30 @@ const Teams = () => {
       linkedin: "https://linkedin.com/in/johndoe",
     },
   ];
+  const [slides, setSlides] = useState(3);
+
+  const updateSlides = () => {
+    if (window.innerWidth < 640) {
+      setSlides(1);
+    } else if (window.innerWidth < 768) {
+      setSlides(2);
+    } else {
+      setSlides(3);
+    }
+  };
+
+  useEffect(() => {
+    updateSlides(); // Set initial slides count
+    window.addEventListener("resize", updateSlides); // Add resize event listener
+
+    return () => {
+      window.removeEventListener("resize", updateSlides); // Clean up event listener
+    };
+  }, []);
 
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={slides}
       pagination={true}
       modules={[Pagination]}
       className="flex items-center justify-center team-cstm"
@@ -73,13 +93,13 @@ const Teams = () => {
       {teams.map((team, index) => (
         <SwiperSlide
           key={index}
-          className="flex flex-col items-center justify-center"
+          className="flex flex-col items-center justify-center px-4"
         >
           <div>
             <img
               src={team.img}
               alt=""
-              className="w-96 h-[26rem] object-cover mb-8 rounded-lg"
+              className="w-96 h-[24rem] object-cover mb-8 rounded-lg"
             />
             <div className="flex flex-col items-start justify-center gap-2">
               <h2 className="font-inter font-medium text-3xl">{team.name}</h2>

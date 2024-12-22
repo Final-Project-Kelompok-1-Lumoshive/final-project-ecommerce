@@ -1,9 +1,7 @@
-
-import React, { useState } from "react";
+import React from "react";
 import { FaHeart, FaTrash } from "react-icons/fa";
 
-const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
-
+const ProductCard = ({ product, inWishlist, onToggleWishlist }) => {
   const {
     image,
     title,
@@ -14,7 +12,6 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
     reviews,
   } = product;
 
-
   // Wishlist toggle handler
   const handleWishlist = () => {
     if (onToggleWishlist) {
@@ -24,6 +21,7 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
 
   return (
     <div className="relative m-10 flex w-full max-w-md flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md group">
+      {/* Product Image Section */}
       <a
         className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-l"
         href="#"
@@ -45,12 +43,22 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
         {/* Wishlist/Trash Icon */}
         <button
           className="absolute top-0 right-0 m-2 rounded-full bg-white p-2 shadow-md z-10"
-          onClick={handleWishlist}
+          onClick={(event) => {
+            event.stopPropagation(); // Prevent click propagation
+            handleWishlist();
+          }}
         >
-          {wishlist ? (
+          {inWishlist ? (
             <FaTrash className="text-red-600 hover:text-red-800" size={20} />
           ) : (
-            <FaHeart className="text-gray-500 hover:text-red-600" size={20} />
+            <FaHeart
+              className={`${
+                product.inWishlist
+                  ? "text-red-600 hover:text-red-800"
+                  : "text-gray-500 hover:text-red-600"
+              }`}
+              size={20}
+            />
           )}
         </button>
 
@@ -76,11 +84,14 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
         </button>
       </a>
 
+      {/* Product Details */}
       <div className="mt-4 px-5 pb-5">
         <a href="#">
           <h5 className="text-xl tracking-tight text-slate-900">{title}</h5>
         </a>
+        {/* Price and Rating Section */}
         <div className="mt-2 mb-5 flex items-center justify-between">
+          {/* Price */}
           <p>
             <span className="text-md font-bold text-black">${price}</span>
             {priceBeforeDiscount && (
@@ -90,7 +101,7 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
             )}
           </p>
 
-          {/* Stars */}
+          {/* Rating */}
           <div className="flex items-center">
             {Array(5)
               .fill(0)
@@ -113,7 +124,6 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
             <span className="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
               ({reviews})
             </span>
-
           </div>
         </div>
       </div>

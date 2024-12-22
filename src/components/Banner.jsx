@@ -15,11 +15,11 @@ const Banner = () => {
         pagination={true}
         loop={true}
         autoplay={{
-          delay: 2500,
+          delay: 6000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination]}
-        className="overflow-hidden max-h-[30rem]"
+        className="overflow-hidden max-h-[26rem]"
       >
         {banners.map((banner, index) => (
           <SwiperSlide>
