@@ -37,7 +37,6 @@ const initialState = {
       quantity: 1,
       status: "success",
     },
-    
   ],
   addresses: [
     {

@@ -1,8 +1,21 @@
 import React, { useState } from "react";
+import DOMPurify from "dompurify";
 import auth from "../assets/auth.png";
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    emailPhone: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const sanitizedValue = DOMPurify.sanitize(value);
+    setFormData({ ...formData, [name]: sanitizedValue });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,11 +33,17 @@ const Auth = () => {
         <div className="flex flex-col gap-10">
           <input
             type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             placeholder="Name"
             className="w-full border-0 border-b border-black/[.5] py-2 focus:outline-0 focus:border-red duration-200"
           />
           <input
             type="text"
+            name="emailPhone"
+            value={formData.emailPhone}
+            onChange={handleChange}
             placeholder="Email or Phone Number"
             className={`${
               isLogin ? "hidden" : ""
@@ -32,25 +51,28 @@ const Auth = () => {
           />
           <input
             type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
             placeholder="Password"
             className="w-full border-0 border-b border-black/[.5] py-2 focus:outline-0 focus:border-red duration-200"
           />
         </div>
         <div
           className={`font-poppins flex ${
-            isLogin ? "flew-row justify-between items-center" : "flex-col"
+            isLogin ? "relative max-lg:mt-6 flew-row justify-between items-center" : "flex-col"
           } gap-4`}
         >
           <button
             onClick={handleSubmit}
             className={`bg-red ${
-              isLogin && "max-w-fit px-12"
+              isLogin && "lg:max-w-fit px-12"
             } text-white font-medium py-4 w-full rounded-md`}
           >
-            Create Account
+            {isLogin ? "Log In" : "Create Account"}
           </button>
           {isLogin ? (
-            <p className="text-red font-medium cursor-pointer">
+            <p className="max-lg:absolute top-0 right-0 max-lg:-translate-y-8 text-red font-medium cursor-pointer">
               Forget Password?
             </p>
           ) : (

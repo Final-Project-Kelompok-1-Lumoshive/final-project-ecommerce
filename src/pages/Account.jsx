@@ -3,24 +3,21 @@ import { Link, useLocation } from "react-router-dom";
 import AccountProfile from "../components/AccountProfile";
 import AccountAddress from "../components/AccountAddress";
 import AccountOrders from "../components/AccountOrders";
+import BreadCrumbs from "../components/BreadCrumbs";
 
 const Account = () => {
   const location = useLocation();
   const path = location.pathname;
 
   return (
-    <div>
+    <div className="flex flex-col lg:gap-12 gap-8">
       <div className="font-poppins flex justify-between">
-        <div className="flex gap-3">
-          <p className="opacity-50">Home</p>
-          <p className="opacity-50">/</p>
-          <p>My Account</p>
-        </div>
+        <BreadCrumbs />
         <p className="lg:flex hidden">
           Welcome!<span className="text-red ms-1">Name</span>
         </p>
       </div>
-      <div className="flex lg:justify-between lg:flex-row flex-col lg:my-16 my-8 max-lg:gap-8">
+      <div className="flex lg:justify-between lg:flex-row flex-col max-lg:gap-8">
         <div className="lg:hidden flex flex-wrap gap-2">
           <Link
             to={"/account/profile"}
