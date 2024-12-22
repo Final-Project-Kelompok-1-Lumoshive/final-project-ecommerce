@@ -41,12 +41,12 @@ const AccountProfile = () => {
               className="bg-[#F5F5F5] border-none focus:outline-0 rounded-md py-3 px-3 w-full"
             />
             <input
-              type="text"
+              type="password"
               placeholder="New Password"
               className="bg-[#F5F5F5] border-none focus:outline-0 rounded-md py-3 px-3 w-full"
             />
             <input
-              type="email"
+              type="password"
               placeholder="Confirm New Password"
               className="bg-[#F5F5F5] border-none focus:outline-0 rounded-md py-3 px-3 w-full"
             />

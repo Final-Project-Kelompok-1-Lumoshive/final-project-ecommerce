@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import DOMPurify from "dompurify";
 
 import { FaPlus } from "react-icons/fa6";
 
@@ -17,11 +18,15 @@ const AccountAddress = () => {
 
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isUpdate, setIsUpdate] = useState(false);
-  const [currentAddressId, setCurrentAddressId] = useState(null);
+  // const [currentAddressId, setCurrentAddressId] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const sanitizedValue = DOMPurify.sanitize(value);
+    setFormData({
+      ...formData,
+      [name]: sanitizedValue,
+    });
   };
 
   const handleSubmit = (e) => {
@@ -47,7 +52,7 @@ const AccountAddress = () => {
       email: address.email,
       address: address.address,
     });
-    setCurrentAddressId(address.id);
+    // setCurrentAddressId(address.id);
     setIsFormOpen(true);
     setIsUpdate(true);
   };

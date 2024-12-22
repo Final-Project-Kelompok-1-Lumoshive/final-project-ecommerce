@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -62,10 +62,30 @@ const Teams = () => {
       linkedin: "https://linkedin.com/in/johndoe",
     },
   ];
+  const [slides, setSlides] = useState(3);
+
+  const updateSlides = () => {
+    if (window.innerWidth < 640) {
+      setSlides(1);
+    } else if (window.innerWidth < 768) {
+      setSlides(2);
+    } else {
+      setSlides(3);
+    }
+  };
+
+  useEffect(() => {
+    updateSlides(); // Set initial slides count
+    window.addEventListener("resize", updateSlides); // Add resize event listener
+
+    return () => {
+      window.removeEventListener("resize", updateSlides); // Clean up event listener
+    };
+  }, []);
 
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={slides}
       pagination={true}
       modules={[Pagination]}
       className="flex items-center justify-center team-cstm"
