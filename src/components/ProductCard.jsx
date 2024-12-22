@@ -1,9 +1,12 @@
-
 import React, { useState } from "react";
 import { FaHeart, FaTrash } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToWishlist,
+  removeFromWishlist,
+} from "../redux/async/wishlistSlice";
 
-const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
-
+const ProductCard = ({ product, isInWishlistSection = false }) => {
   const {
     image,
     title,
@@ -14,16 +17,25 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
     reviews,
   } = product;
 
+  const dispatch = useDispatch();
+
+  // Wishlist state
+  const wishlist = useSelector((state) => state.wishlist.items);
+
+  // Check if product is in wishlist
+  const isWishlisted = wishlist.some((item) => item.id === product.id);
 
   // Wishlist toggle handler
   const handleWishlist = () => {
-    if (onToggleWishlist) {
-      onToggleWishlist(product);
+    if (isWishlisted) {
+      dispatch(removeFromWishlist(product));
+    } else {
+      dispatch(addToWishlist(product));
     }
   };
 
   return (
-    <div className="relative m-10 flex w-full max-w-md flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md group">
+    <div className="relative flex w-full max-w-md flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md group">
       <a
         className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-l"
         href="#"
@@ -42,15 +54,29 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
           </span>
         )}
 
+        {/* New Arrival */}
+        {/* {discount && (
+          <span className="absolute top-0 left-0 m-2 rounded-full bg-red px-2 text-center text-sm font-medium text-white">
+            New
+          </span>
+        )} */}
+
         {/* Wishlist/Trash Icon */}
         <button
           className="absolute top-0 right-0 m-2 rounded-full bg-white p-2 shadow-md z-10"
           onClick={handleWishlist}
         >
-          {wishlist ? (
-            <FaTrash className="text-red-600 hover:text-red-800" size={20} />
+          {isWishlisted ? (
+            isInWishlistSection ? (
+              <FaTrash className="text-black hover:text-gray-600" size={20} />
+            ) : (
+              <FaHeart className="text-red hover:text-orange-400" size={20} />
+            )
           ) : (
-            <FaHeart className="text-gray-500 hover:text-red-600" size={20} />
+            <FaHeart
+              className="text-gray-400 hover:text-orange-500"
+              size={20}
+            />
           )}
         </button>
 
@@ -99,13 +125,13 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
                   key={i}
                   aria-hidden="true"
                   className={`h-5 w-5 ${
-                    i < rating ? "text-yellow-300" : "text-gray-300"
+                    i < rating ? "text-yellow-400" : "text-gray-300"
                   }`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8-2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
               ))}
 
@@ -113,7 +139,6 @@ const ProductCard = ({ product, wishlist = false, onToggleWishlist }) => {
             <span className="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
               ({reviews})
             </span>
-
           </div>
         </div>
       </div>
