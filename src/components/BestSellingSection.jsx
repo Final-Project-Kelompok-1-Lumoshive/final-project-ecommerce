@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import TitleSection from "./TitleSection";
 import { useSelector } from "react-redux";
 
-const AllProductSection = () => {
+const BestSellingSection = () => {
   const products = useSelector((state) => state.products.items);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
@@ -26,12 +26,15 @@ const AllProductSection = () => {
   const currentItems = products.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <section className="bg-white py-12 px-6">
+    <section className="bg-white py-12">
       <div className="max-w-7xl mx-auto">
         {/* Title and Pagination Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           {/* Title and Description */}
-          <TitleSection section={"Our Products"} title="Explore Our Products" />
+          <TitleSection
+            section={"Best Selling Products"}
+            title="Best Selling Products"
+          />
 
           {/* Pagination */}
           <div className="flex justify-center items-center gap-4 mt-4 md:mt-0">
@@ -85,4 +88,4 @@ const AllProductSection = () => {
   );
 };
 
-export default AllProductSection;
+export default BestSellingSection;
