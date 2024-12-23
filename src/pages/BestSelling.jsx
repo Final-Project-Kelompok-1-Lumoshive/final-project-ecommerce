@@ -1,5 +1,5 @@
 import React from "react";
-import BestSellingSection from "../components/BestSelling";
+import BestSellingSection from "../components/BestSellingSection";
 
 const Wishlist = () => {
   return (
