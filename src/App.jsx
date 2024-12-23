@@ -1,5 +1,10 @@
-import React, {useEffect} from "react";
-import { useLocation, BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  useLocation,
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -8,6 +13,8 @@ import About from "./pages/About";
 import Account from "./pages/Account";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
+import Wishlist from "./pages/Wishlist";
+import BestSelling from "./pages/BestSelling";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -17,7 +24,7 @@ function ScrollToTop() {
   }, [pathname]);
 
   return null;
-};
+}
 
 const App = () => {
   return (
@@ -36,6 +43,8 @@ const App = () => {
           <Route path="/account/address" element={<Account />} />
           <Route path="/account/order" element={<Account />} />
           <Route path="/error" element={<Error />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/best-selling" element={<BestSelling />} />
         </Routes>
       </div>
       <Footer />
