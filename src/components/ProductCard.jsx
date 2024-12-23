@@ -5,6 +5,7 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../redux/async/wishlistSlice";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product, isInWishlistSection = false }) => {
   const {
@@ -36,10 +37,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
 
   return (
     <div className="relative flex w-full max-w-md flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md group">
-      <a
-        className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-l"
-        href="#"
-      >
+      <Link className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-l">
         {/* Product Image */}
         <img
           className="object-cover w-full h-full rounded-l"
@@ -67,6 +65,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
           onClick={(event) => {
             event.stopPropagation(); // Prevent click propagation
             handleWishlist();
+            event.preventDefault();
           }}
         >
           {isWishlisted ? (
@@ -103,7 +102,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
             Add to Cart
           </span>
         </button>
-      </a>
+      </Link>
 
       {/* Product Details */}
       <div className="mt-4 px-5 pb-5">
@@ -142,7 +141,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
               ))}
 
             {/* Total Reviews */}
-            <span className="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
+            <span className="mr-2 ml-3 rounded px-2.5 py-0.5 text-xs font-semibold">
               ({reviews})
             </span>
           </div>

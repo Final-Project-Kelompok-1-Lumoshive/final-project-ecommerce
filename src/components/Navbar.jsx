@@ -60,10 +60,18 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-4 text-black">
-            <Link to={"/"}><li>Home</li></Link>
-            <Link to={"/contact"}><li>Contact</li></Link>
-            <Link to={"/about"}><li>About</li></Link>
-            <Link to={"/auth"}><li>Sign Up</li></Link>
+            <Link to={"/"}>
+              <li>Home</li>
+            </Link>
+            <Link to={"/contact"}>
+              <li>Contact</li>
+            </Link>
+            <Link to={"/about"}>
+              <li>About</li>
+            </Link>
+            <Link to={"/auth"}>
+              <li>Sign Up</li>
+            </Link>
           </ul>
 
           {/* Search Box */}
@@ -80,9 +88,12 @@ const Navbar = () => {
 
           {/* Wishlist and Cart Icons */}
           <div className="flex items-center space-x-4">
-            <button className="text-gray-600 hover:text-blue-600">
+            <Link
+              className="text-gray-600 hover:text-blue-600"
+              to={"/wishlist"}
+            >
               <span className="material-icons">favorite_border</span>
-            </button>
+            </Link>
             <button className="text-gray-600 hover:text-blue-600">
               <span className="material-icons">shopping_cart</span>
             </button>
