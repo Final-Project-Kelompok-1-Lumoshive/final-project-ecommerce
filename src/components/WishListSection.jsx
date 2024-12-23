@@ -2,25 +2,28 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ProductCard from "./ProductCard";
 
-const Wishlist = () => {
-  const wishlist = useSelector((state) => state.wishlist);
+const WishlistSection = () => {
+  const items = useSelector((state) => state.wishlist.items);
 
   return (
-    <section className="bg-white py-12 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">Your Wishlist</h2>
-        {wishlist.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {wishlist.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        ) : (
-          <p className="text-center text-black">Your wishlist is empty.</p>
-        )}
+    <div className="bg-white py-12 px-6">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-2xl font-bold">Wishlist ({items.length})</h2>
+        <button className="bg-white text-black py-2 px-4 rounded-md border-black hover:bg-gray-200">
+          Move All To Bag
+        </button>
       </div>
-    </section>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {items.map((item) => (
+          <ProductCard
+            key={item.id}
+            product={item}
+            isInWishlistSection={true}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default Wishlist;
+export default WishlistSection;
