@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProductCard from "./ProductCard";
 import TitleSection from "./TitleSection";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const JustForYouSection = () => {
   const products = useSelector((state) => state.products.items);
@@ -33,30 +34,14 @@ const JustForYouSection = () => {
           {/* Title and Description */}
           <TitleSection section="" title="Just For You" />
 
-          {/* Pagination */}
-          <div className="flex justify-center items-center gap-4 mt-4 md:mt-0">
-            <button
-              onClick={handlePrevPage}
-              disabled={currentPage === 1}
-              className={`px-4 py-2 text-black-500 font-medium ${
-                currentPage === 1
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "hover:underline"
-              }`}
+          {/* View All Products Button */}
+          <div className="text-center mt-8">
+            <Link
+              to={"/best-selling"}
+              className="px-4 py-2 text-white bg-red rounded-md hover:bg-gray-800"
             >
-              Prev
-            </button>
-            <button
-              onClick={handleNextPage}
-              disabled={currentPage === totalPages}
-              className={`px-4 py-2 text-black-500 font-medium ${
-                currentPage === totalPages
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "hover:underline"
-              }`}
-            >
-              Next
-            </button>
+              See all
+            </Link>
           </div>
         </div>
 
@@ -69,16 +54,6 @@ const JustForYouSection = () => {
               isInWishlistSection={false}
             />
           ))}
-        </div>
-
-        {/* View All Products Button */}
-        <div className="text-center mt-8">
-          <a
-            href=""
-            className="px-4 py-2 text-white bg-red rounded-md hover:bg-gray-800"
-          >
-            View all Products
-          </a>
         </div>
       </div>
     </section>

@@ -14,6 +14,8 @@ const initialState = {
       discount: 23,
       rating: 5,
       reviews: 65,
+      category: "Men's Fashion",
+      stock: 25,
     },
     {
       id: 2,
@@ -25,6 +27,8 @@ const initialState = {
       discount: null,
       rating: 4,
       reviews: 48,
+      category: "Sport",
+      stock: 15,
     },
     {
       id: 3,
@@ -36,6 +40,8 @@ const initialState = {
       discount: 25,
       rating: 4,
       reviews: 76,
+      category: "Hobby",
+      stock: 10,
     },
     {
       id: 4,
@@ -47,6 +53,8 @@ const initialState = {
       discount: null,
       rating: 3,
       reviews: 23,
+      category: "Kitchen Appliances",
+      stock: 30,
     },
     {
       id: 5,
@@ -58,6 +66,8 @@ const initialState = {
       discount: 20,
       rating: 5,
       reviews: 89,
+      category: "Men's Fashion",
+      stock: 5,
     },
     {
       id: 6,
@@ -69,6 +79,8 @@ const initialState = {
       discount: 25,
       rating: 3,
       reviews: 33,
+      category: "Sport",
+      stock: 20,
     },
     {
       id: 7,
@@ -80,6 +92,8 @@ const initialState = {
       discount: 25,
       rating: 4,
       reviews: 71,
+      category: "Hobby",
+      stock: 8,
     },
     {
       id: 8,
@@ -91,8 +105,172 @@ const initialState = {
       discount: null,
       rating: 4,
       reviews: 49,
+      category: "Kitchen Appliances",
+      stock: 18,
+    },
+    {
+      id: 9,
+      title: "Product 9",
+      image:
+        "https://images.unsplash.com/photo-1580910051074-7c59c19f2b40?auto=format&fit=crop&w=500&q=60",
+      price: 180,
+      priceBeforeDiscount: 220,
+      discount: 18,
+      rating: 4,
+      reviews: 57,
+      category: "Electronics",
+      stock: 12,
+    },
+    {
+      id: 10,
+      title: "Product 10",
+      image:
+        "https://images.unsplash.com/photo-1593032432895-d6ed3e36ca30?auto=format&fit=crop&w=500&q=60",
+      price: 220,
+      priceBeforeDiscount: 300,
+      discount: 27,
+      rating: 5,
+      reviews: 95,
+      category: "Home Decor",
+      stock: 25,
+    },
+    {
+      id: 11,
+      title: "Product 11",
+      image:
+        "https://images.unsplash.com/photo-1611080626911-fc97747d4f18?auto=format&fit=crop&w=500&q=60",
+      price: 65,
+      priceBeforeDiscount: 80,
+      discount: 18,
+      rating: 3,
+      reviews: 19,
+      category: "Books",
+      stock: 40,
+    },
+    {
+      id: 12,
+      title: "Product 12",
+      image:
+        "https://images.unsplash.com/photo-1506807803488-8eafc153f7e1?auto=format&fit=crop&w=500&q=60",
+      price: 300,
+      priceBeforeDiscount: 360,
+      discount: 17,
+      rating: 4,
+      reviews: 67,
+      category: "Garden",
+      stock: 7,
+    },
+    {
+      id: 13,
+      title: "Product 13",
+      image:
+        "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=500&q=60",
+      price: 110,
+      priceBeforeDiscount: 150,
+      discount: 27,
+      rating: 3,
+      reviews: 34,
+      category: "Pet Supplies",
+      stock: 9,
+    },
+    {
+      id: 14,
+      title: "Product 14",
+      image:
+        "https://images.unsplash.com/photo-1606813902997-882f239f6b39?auto=format&fit=crop&w=500&q=60",
+      price: 275,
+      priceBeforeDiscount: 350,
+      discount: 21,
+      rating: 4,
+      reviews: 72,
+      category: "Kitchen Appliances",
+      stock: 10,
+    },
+    {
+      id: 15,
+      title: "Product 15",
+      image:
+        "https://images.unsplash.com/photo-1616278917771-cf9e9d57b6de?auto=format&fit=crop&w=500&q=60",
+      price: 420,
+      priceBeforeDiscount: 500,
+      discount: 16,
+      rating: 5,
+      reviews: 103,
+      category: "Gaming",
+      stock: 4,
+    },
+    {
+      id: 16,
+      title: "Product 16",
+      image:
+        "https://images.unsplash.com/photo-1548095115-d8c0781bcff9?auto=format&fit=crop&w=500&q=60",
+      price: 130,
+      priceBeforeDiscount: null,
+      discount: null,
+      rating: 4,
+      reviews: 58,
+      category: "Office Supplies",
+      stock: 28,
+    },
+    {
+      id: 17,
+      title: "Product 17",
+      image:
+        "https://images.unsplash.com/photo-1573487812550-67bcf06d2a18?auto=format&fit=crop&w=500&q=60",
+      price: 90,
+      priceBeforeDiscount: 120,
+      discount: 25,
+      rating: 4,
+      reviews: 51,
+      category: "Clothing",
+      stock: 14,
+    },
+    {
+      id: 18,
+      title: "Product 18",
+      image:
+        "https://images.unsplash.com/photo-1580910551072-d3b97c53f5b7?auto=format&fit=crop&w=500&q=60",
+      price: 50,
+      priceBeforeDiscount: 70,
+      discount: 29,
+      rating: 3,
+      reviews: 20,
+      category: "Accessories",
+      stock: 45,
+    },
+    {
+      id: 19,
+      title: "Product 19",
+      image:
+        "https://images.unsplash.com/photo-1526040652367-b0e8f2761500?auto=format&fit=crop&w=500&q=60",
+      price: 350,
+      priceBeforeDiscount: 400,
+      discount: 12,
+      rating: 5,
+      reviews: 112,
+      category: "Furniture",
+      stock: 6,
+    },
+    {
+      id: 20,
+      title: "Product 20",
+      image:
+        "https://images.unsplash.com/photo-1576515037455-0d8d5e9e50d1?auto=format&fit=crop&w=500&q=60",
+      price: 260,
+      priceBeforeDiscount: 300,
+      discount: 13,
+      rating: 4,
+      reviews: 64,
+      category: "Beauty",
+      stock: 13,
     },
   ],
+};
+
+// Utility function to get unique categories
+export const getUniqueCategories = (products) => {
+  const categories = products.map((product) => product.category);
+  return [...new Set(categories)]; // Return unique categories
 };
 
 const productsSlice = createSlice({
