@@ -1,12 +1,21 @@
 import React from "react";
-import BestSellingSection from "../components/BestSellingSection";
+import AllProductSection from "../components/AllProductSection";
+import { useSelector } from "react-redux";
 
-const Wishlist = () => {
+const BestSelling = () => {
+  const products = useSelector((state) => state.products.items);
   return (
     <div>
-      <BestSellingSection />
+      <AllProductSection
+        showMore={true}
+        itemsPerPage={8}
+        showPagination={false}
+        products={products}
+        section="Best Selling"
+        title="Best Selling Products"
+      />
     </div>
   );
 };
 
-export default Wishlist;
+export default BestSelling;
