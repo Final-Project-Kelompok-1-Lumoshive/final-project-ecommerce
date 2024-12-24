@@ -46,7 +46,7 @@ const AllProductSection = ({
 
   return (
     <section className="bg-white py-12">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         {/* Title and Pagination Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           {/* Title and Description */}
@@ -84,7 +84,7 @@ const AllProductSection = ({
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
           {currentItems.map((product) => (
             <ProductCard
               key={product.id}
@@ -99,14 +99,14 @@ const AllProductSection = ({
           {showMore ? (
             <button
               onClick={handleShowMore}
-              className="px-4 py-2 text-white bg-red rounded-md hover:bg-gray-800"
+              className="px-4 py-2 text-white bg-red rounded hover:bg-orange-600"
             >
               Show More
             </button>
           ) : (
             <Link
               to="/all-product"
-              className="px-4 py-2 text-white bg-red rounded-md hover:bg-gray-800"
+              className="px-4 py-2 text-white bg-red rounded hover:bg-orange-600"
             >
               View all Products
             </Link>

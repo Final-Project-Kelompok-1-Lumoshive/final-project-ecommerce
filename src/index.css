@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.swiper-button-next, 
+.swiper-button-next,
 .swiper-button-prev {
   color: red;
 }
 
-.team-cstm .swiper-button-next, 
+.team-cstm .swiper-button-next,
 .swiper-button-prev {
   color: red;
 }
@@ -25,7 +25,7 @@
 }
 
 .team-cstm .swiper-pagination-bullet-active {
-  background-color: #DB4444 !important;
+  background-color: #db4444 !important;
   border: 2px solid white !important;
   outline: 2px solid rgba(0, 0, 0, 0.3);
   opacity: 100% !important;
@@ -44,7 +44,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #DB4444 !important;
+  background-color: #db4444 !important;
   border: 2px solid white !important;
   opacity: 100% !important;
 }
