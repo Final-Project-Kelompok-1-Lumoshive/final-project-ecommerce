@@ -1,19 +1,88 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import AllProductSection from "../components/AllProductSection";
 import TitleSection from "../components/TitleSection";
 import Banner from "../components/Banner";
+
+import { A11y, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import delivery from "../assets/icon-delivery.svg";
 import customer from "../assets/Icon-Customer service.svg";
 import secure from "../assets/Icon-secure.svg";
-import WishlistSection from "../components/WishListSection";
+import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
+import CategoryButton from "../components/CategoryButton";
+import RecommendSection from "../components/RecommendSection";
 
 const HomePage = () => {
+  const { category } = useSelector((state) => state.fetch);
+  const [slides, setSlides] = useState(6);
+  const swiperRef = useRef(null);
+
+  const updateSlides = () => {
+    if (window.innerWidth < 640) {
+      setSlides(2.5);
+    } else if (window.innerWidth < 1024) {
+      setSlides(4);
+    } else {
+      setSlides(6);
+    }
+  };
+
+  useEffect(() => {
+    updateSlides(); // Set initial slides count
+    window.addEventListener("resize", updateSlides); // Add resize event listener
+
+    return () => {
+      window.removeEventListener("resize", updateSlides); // Clean up event listener
+    };
+  }, []);
   return (
     <div>
       <Banner />
-      <TitleSection section="Categories" title="Browse By Category" />
+      <div className="py-16">
+        <div className="flex justify-between items-end w-full">
+          <TitleSection section="Categories" title="Browse By Category" />
+          <div className="md:flex hidden gap-2">
+            <button
+              onClick={() => swiperRef.current.slidePrev()}
+              className="bg-[#F5F5F5] hover:bg-black/[.1] active:bg-black/[.2] h-10 w-10 rounded-full flex justify-center items-center"
+            >
+              <IoArrowBackOutline className="text-2xl" />
+            </button>
+            <button
+              onClick={() => swiperRef.current.slideNext()}
+              className="bg-[#F5F5F5] hover:bg-black/[.1] active:bg-black/[.2] h-10 w-10 rounded-full flex justify-center items-center"
+            >
+              <IoArrowForwardOutline className="text-2xl" />
+            </button>
+          </div>
+        </div>
+        <Swiper
+          slidesPerView={slides}
+          spaceBetween={30}
+          modules={[Navigation, Pagination, A11y]}
+          className="flex items-center my-10"
+        >
+          <div className="hidden">
+          <CategoryButton ref={swiperRef} />
+          </div>
+          {category.map((item) => (
+            <SwiperSlide key={item.name}>
+              <Link className="font-poppins text-center flex flex-col justify-center items-center gap-4 border border-black/[.3] rounded p-6 w-full select-none hover:bg-black/[.05]">
+                <img src={item.icon} alt="" />
+                <p>{item.name}</p>
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <Banner />
       <AllProductSection />
-      <WishlistSection />
+      <RecommendSection />
       <div className="flex flex-wrap justify-center items-center lg:gap-20 gap-4">
         <div className="font-poppins text-center md:py-14 py-4 max-md:max-w-40">
           <img

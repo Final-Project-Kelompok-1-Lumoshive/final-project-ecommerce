@@ -52,6 +52,47 @@ const initialState = {
       email: "jane.smith@example.com",
     }
   ],
+  category: [
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+  ],
+  recommend:[
+    {
+      id: 1,
+      name: "Asus ROG Strix G12",
+      image: "https://rog.asus.com/media/1704423805683.jpg",
+    },
+    {
+      id: 2,
+      name: "Asus ROG Strix G12",
+      image: "https://rog.asus.com/media/1704423805683.jpg",
+    },
+    {
+      id: 3,
+      name: "Asus ROG Strix G12",
+      image: "https://rog.asus.com/media/1704423805683.jpg",
+    },
+    {
+      id: 4,
+      name: "Asus ROG Strix G12",
+      image: "https://rog.asus.com/media/1704423805683.jpg",
+    },
+  ],
   loading: false,
   error: null,
 };
