@@ -49,14 +49,11 @@
   opacity: 100% !important;
 }
 
-@layer base {
+/* @layer base {
   div,
   h1,
   ul,
   img {
     @apply border border-black border-opacity-30;
   }
-  body {
-    /* @apply font-main; */
-  }
-}
+} */
