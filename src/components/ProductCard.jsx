@@ -36,18 +36,18 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
   };
 
   return (
-    <div className="relative flex w-full max-w-md flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md group">
-      <Link className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-l">
+    <div className="relative flex w-full max-w-md flex-col overflow-hidden bg-white group">
+      <Link className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded">
         {/* Product Image */}
         <img
-          className="object-cover w-full h-full rounded-l"
+          className="object-cover w-full h-full rounded"
           src={image}
           alt={title}
         />
 
         {/* Discount */}
         {discount && (
-          <span className="absolute top-0 left-0 m-2 rounded-full bg-red px-2 text-center text-sm font-medium text-white">
+          <span className="absolute top-0 left-0 m-2 rounded bg-red px-2 text-center text-sm font-medium text-white">
             {discount}% OFF
           </span>
         )}
@@ -105,12 +105,12 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
       </Link>
 
       {/* Product Details */}
-      <div className="mt-4 px-5 pb-5">
+      <div className="mt-4 px-3 pb-5">
         <a href="#">
           <h5 className="text-xl tracking-tight text-slate-900">{title}</h5>
         </a>
         {/* Price and Rating Section */}
-        <div className="mt-2 mb-5 flex items-center justify-between">
+        <div className="mt-2 mb-5 flex items-center justify-around md:justify-start gap-x-4 gap-y-1 flex-wrap">
           {/* Price */}
           <p>
             <span className="text-md font-bold text-black">${price}</span>
@@ -122,7 +122,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
           </p>
 
           {/* Rating */}
-          <div className="flex items-center">
+          <div className="flex items-center justify-center">
             {Array(5)
               .fill(0)
               .map((_, i) => (
@@ -141,7 +141,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
               ))}
 
             {/* Total Reviews */}
-            <span className="mr-2 ml-3 rounded px-2.5 py-0.5 text-xs font-semibold">
+            <span className="mr-2 ml-2 rounded py-0.5 text-xs font-semibold">
               ({reviews})
             </span>
           </div>
