@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import Error from "./pages/Error";
 import Wishlist from "./pages/Wishlist";
 import BestSelling from "./pages/BestSelling";
+import AllProduct from "./pages/AllProduct";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/error" element={<Error />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/best-selling" element={<BestSelling />} />
+          <Route path="/all-product" element={<AllProduct />} />
         </Routes>
       </div>
       <Footer />

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AllProductSection from "../components/AllProductSection";
+import BestSellingSection from "../components/BestSellingSection";
 import TitleSection from "../components/TitleSection";
 import Banner from "../components/Banner";
 
@@ -19,6 +20,7 @@ import RecommendSection from "../components/RecommendSection";
 
 const HomePage = () => {
   const { category } = useSelector((state) => state.fetch);
+  const products = useSelector((state) => state.products.items);
   const [slides, setSlides] = useState(6);
   const swiperRef = useRef(null);
 
@@ -80,8 +82,14 @@ const HomePage = () => {
           ))}
         </Swiper>
       </div>
+      <BestSellingSection />
       <Banner />
-      <AllProductSection />
+      <AllProductSection
+        showMore={false}
+        itemsPerPage={8}
+        showPagination={true}
+        products={products}
+      />
       <RecommendSection />
       <div className="flex flex-wrap justify-center items-center lg:gap-20 gap-4">
         <div className="font-poppins text-center md:py-14 py-4 max-md:max-w-40">

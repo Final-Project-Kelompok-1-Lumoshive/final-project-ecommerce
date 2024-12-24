@@ -26,7 +26,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
   // Check if product is in wishlist
   const isWishlisted = wishlist.some((item) => item.id === product.id);
 
-  // Wishlist toggle handler
+  // Wishlist toggle handler and for remove
   const handleWishlist = () => {
     if (isWishlisted) {
       dispatch(removeFromWishlist(product));
