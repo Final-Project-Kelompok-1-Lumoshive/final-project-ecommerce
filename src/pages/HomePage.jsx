@@ -44,7 +44,9 @@ const HomePage = () => {
   }, []);
   return (
     <div>
+      <div className="-translate-y-8">
       <Banner />
+      </div>
       <div className="py-16">
         <div className="flex justify-between items-end w-full">
           <TitleSection section="Categories" title="Browse By Category" />

@@ -102,9 +102,9 @@ const Navbar = () => {
               className="bg-transparent focus:outline-none p-2"
               onClick={toggleMenu}
             >
-              <div className="bg-white h-1 w-6 mb-1"></div>
-              <div className="bg-white h-1 w-6 mb-1"></div>
-              <div className="bg-white h-1 w-6"></div>
+              <div className="bg-black rounded-full h-1 w-6 mb-1"></div>
+              <div className="bg-black rounded-full h-1 w-6 mb-1"></div>
+              <div className="bg-black rounded-full h-1 w-6"></div>
             </button>
           </div>
 
@@ -114,7 +114,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <ul className="hidden lg:flex space-x-8 text-black">
+          <ul className="font-poppins hidden lg:flex space-x-8 text-black">
             <Link
               to={"/"}
               className={
