@@ -14,6 +14,8 @@ const AllProductSection = ({
   showPagination = true,
   itemsPerPage = 4,
   products,
+  section = "Our Products",
+  title = "Explore Our Products",
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsToShow, setItemsToShow] = useState(itemsPerPage);
@@ -48,7 +50,7 @@ const AllProductSection = ({
         {/* Title and Pagination Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           {/* Title and Description */}
-          <TitleSection section={"Our Products"} title="Explore Our Products" />
+          <TitleSection section={section} title={title} />
 
           {/* Pagination */}
           <div className="text-center">

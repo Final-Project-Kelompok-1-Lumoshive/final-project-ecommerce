@@ -5,13 +5,22 @@ import Banner from "../components/Banner";
 import delivery from "../assets/icon-delivery.svg";
 import customer from "../assets/Icon-Customer service.svg";
 import secure from "../assets/Icon-secure.svg";
+import { useSelector } from "react-redux";
+import BestSellingSection from "../components/BestSellingSection";
 
 const HomePage = () => {
+  const products = useSelector((state) => state.products.items);
   return (
     <div>
       <Banner />
       <TitleSection section="Categories" title="Browse By Category" />
-      <AllProductSection />
+      <BestSellingSection />
+      <AllProductSection
+        showMore={false}
+        itemsPerPage={8}
+        showPagination={true}
+        products={products}
+      />
       <div className="flex flex-wrap justify-center items-center lg:gap-20 gap-4">
         <div className="font-poppins text-center md:py-14 py-4 max-md:max-w-40">
           <img

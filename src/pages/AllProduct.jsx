@@ -31,7 +31,7 @@ const AllProduct = () => {
       <div className="flex-1">
         <AllProductSection
           showMore={true}
-          itemsPerPage={6}
+          itemsPerPage={8}
           showPagination={false}
           products={filteredProducts}
         />
