@@ -33,7 +33,7 @@ const App = () => {
       <div className="pb-24">
         <Navbar />
       </div>
-      <div className="lg:mx-24 mx-6 my-24">
+      <div className="lg:mx-24 mx-6 my-32">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/auth" element={<Auth />} />

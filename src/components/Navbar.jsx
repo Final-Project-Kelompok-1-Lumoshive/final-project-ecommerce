@@ -53,7 +53,7 @@ const Navbar = () => {
   return (
     <nav className="fixed flex w-full flex-col z-50">
       <div className="relative font-poppins text-sm bg-black text-white justify-center items-center py-4">
-        <div className="text-lg text-center md:px-52">
+        <div className="text-lg text-center md:px-56">
           {lang === "en"
             ? "Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!"
             : "Penawaran Panas Untuk Semua Baju Renang dan Pengiriman Express Gratis - Diskon 50%!"}
