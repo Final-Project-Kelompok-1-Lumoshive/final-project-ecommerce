@@ -44,10 +44,8 @@ const HomePage = () => {
   }, []);
   return (
     <div>
-      <div className="-translate-y-8">
       <Banner />
-      </div>
-      <div className="py-16">
+      <div className="lg:py-14 pt-12">
         <div className="flex justify-between items-end w-full">
           <TitleSection section="Categories" title="Browse By Category" />
           <div className="md:flex hidden gap-2">
@@ -69,7 +67,7 @@ const HomePage = () => {
           slidesPerView={slides}
           spaceBetween={30}
           modules={[Navigation, Pagination, A11y]}
-          className="flex items-center my-10"
+          className="flex items-center lg:my-10 mt-10"
         >
           <div className="hidden">
           <CategoryButton ref={swiperRef} />
@@ -93,8 +91,8 @@ const HomePage = () => {
         products={products}
       />
       <RecommendSection />
-      <div className="flex flex-wrap justify-center items-center lg:gap-20 gap-4">
-        <div className="font-poppins text-center md:py-14 py-4 max-md:max-w-40">
+      <div className="grid md:grid-cols-6 grid-cols-2 lg:gap-20 gap-4">
+        <div className="md:col-span-2 col-span-1 mx-auto font-poppins text-center md:py-14 py-4 max-md:max-w-40">
           <img
             src={delivery}
             className="text-black bg-black text-white p-2 rounded-full outline outline-8 outline-black/[.3] mx-auto mb-8 max-md:scale-75"
@@ -106,7 +104,7 @@ const HomePage = () => {
             Free delivery for all orders over $140
           </p>
         </div>
-        <div className="font-poppins text-center md:py-14 py-4 max-md:max-w-40">
+        <div className="md:col-span-2 col-span-1 mx-auto font-poppins text-center md:py-14 py-4 max-md:max-w-40">
           <img
             src={customer}
             className="text-black bg-black text-white p-2 rounded-full outline outline-8 outline-black/[.3] mx-auto mb-8 max-md:scale-75"
@@ -116,7 +114,7 @@ const HomePage = () => {
           </h2>
           <p className="md:text-base text-xs">Friendly 24/7 customer support</p>
         </div>
-        <div className="font-poppins text-center md:py-14 py-4 max-md:max-w-40">
+        <div className="md:col-span-2 col-span-2 mx-auto font-poppins text-center md:py-14 py-4 max-md:max-w-40">
           <img
             src={secure}
             className="text-black bg-black text-white p-2 rounded-full outline outline-8 outline-black/[.3] mx-auto mb-8 max-md:scale-75"

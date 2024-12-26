@@ -109,8 +109,8 @@ const Navbar = () => {
           </div>
 
           {/* Logo */}
-          <div className="text-black font-bold text-xl">
-            <a href="/">Exclusive</a>
+          <div className="font-poppins text-black font-bold text-xl">
+            <Link to="/">Exclusive</Link>
           </div>
 
           {/* Desktop Menu */}
@@ -183,30 +183,57 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu */}
-          {isOpen && (
-            <div className="fixed inset-0 bg-white text-black flex flex-col items-center justify-center z-50">
-              <ul className="text-xl text-center flex flex-col gap-6">
-                <Link to={"/"} onClick={toggleMenu}>
-                  <li>Home</li>
-                </Link>
-                <Link to={"/contact"} onClick={toggleMenu}>
-                  <li>Contact</li>
-                </Link>
-                <Link to={"/about"} onClick={toggleMenu}>
-                  <li>About</li>
-                </Link>
-                <Link to={"/wishlist"} onClick={toggleMenu}>
-                  <li>Wishlist</li>
-                </Link>
-              </ul>
-              <button
-                className="absolute bottom-8 bg-white text-black font-bold py-2 px-4 text-2xl"
-                onClick={toggleMenu}
-              >
-                X
-              </button>
+            <div className={`${isOpen ? "bg-black/[.2] z-50" : "bg-transparent pointer-events-none"} fixed inset-0 text-black flex flex-col items-center transition duration-300`}>
+              <div className={`${isOpen ? "translate-y-0" : "-translate-y-[100%]"} flex flex-col items-center bg-white w-full gap-2 rounded-b-2xl shadow-md transition duration-300`}>
+                <div className="flex justify-between items-center w-full px-6 py-6">
+                  <Link to="/" className="font-poppins font-bold text-xl">
+                    Exclusive
+                  </Link>
+                  <button onClick={toggleMenu} className="relative flex justify-center items-center border border-black rounded-full size-10">
+                    <div className="absolute h-1 w-6 bg-black rounded-full rotate-45"></div>
+                    <div className="absolute h-1 w-6 bg-black rounded-full -rotate-45"></div>
+                  </button>
+                </div>
+                <div className="flex w-full px-6">
+                <form
+                  onSubmit={handleSubmit}
+                  className="relative bg-[#F5F5F5] rounded p-1 w-full"
+                >
+                  <input
+                    type="text"
+                    value={search}
+                    onChange={handleChange}
+                    placeholder="What are you looking for?"
+                    className="bg-transparent rounded outline-0 p-2 min-w-72"
+                  />
+                  <button className="absolute bottom-0 top-0 right-4">
+                    <LuSearch size={20} />
+                  </button>
+                </form>
+                </div>
+                <ul className="font-poppins flex justify-start w-full flex-col">
+                  <Link to={"/"} onClick={toggleMenu} className={`${location.pathname === "/" ? "font-medium border-red text-black" : "border-white text-black/[.5]"} border-l-8 pl-4 py-4`}>
+                    <li>Home</li>
+                  </Link>
+                  <Link to={"/contact"} onClick={toggleMenu} className={`${location.pathname === "/contact" ? "font-medium border-red text-black" : "border-white text-black/[.5]"} border-l-8 pl-4 py-4`}>
+                    <li>Contact</li>
+                  </Link>
+                  <Link to={"/about"} onClick={toggleMenu} className={`${location.pathname === "/about" ? "font-medium border-red text-black" : "border-white text-black/[.5]"} border-l-8 pl-4 py-4`}>
+                    <li>About</li>
+                  </Link>
+                  <Link to={"/wishlist"} onClick={toggleMenu} className={`${location.pathname === "/wishlist" ? "font-medium border-red text-black" : "border-white text-black/[.5]"} border-l-8 pl-4 py-4`}>
+                    <li>Wishlist</li>
+                  </Link>
+                </ul>
+                <div className="w-full px-6">
+                <div className="w-full h-0.5 bg-black/[.3] rounded-full"></div>
+                <div className="flex justify-end gap-3 w-full mt-6 py-6">
+                  <Link to="/auth" onClick={toggleMenu} className="border-2 border-red active:bg-red active:text-white rounded px-6 py-1.5">Sign Up</Link>
+                  <Link to="/auth" onClick={toggleMenu} className="border-2 border-red bg-red active:brightness-75 text-white rounded px-6 py-1.5">Login</Link>
+                </div>
+                </div>
+              </div>
             </div>
-          )}
         </div>
       </div>
     </nav>
