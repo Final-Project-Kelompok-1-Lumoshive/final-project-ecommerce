@@ -28,7 +28,7 @@ const BestSellingSection = () => {
 
   return (
     <section className="bg-white py-12">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         {/* Title and Pagination Section */}
         <div className="flex justify-between items-center md:items-end gap-3 mb-8">
           {/* Title and Description */}
@@ -44,7 +44,7 @@ const BestSellingSection = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
           {currentItems.map((product) => (
             <ProductCard
               key={product.id}

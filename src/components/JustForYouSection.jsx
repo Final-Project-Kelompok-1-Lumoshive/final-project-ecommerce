@@ -28,7 +28,7 @@ const JustForYouSection = () => {
 
   return (
     <section className="bg-white py-12">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         {/* Title and Pagination Section */}
         <div className="flex justify-between items-center mb-8">
           {/* Title */}
@@ -49,7 +49,7 @@ const JustForYouSection = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {currentItems.map((product) => (
             <ProductCard
               key={product.id}
