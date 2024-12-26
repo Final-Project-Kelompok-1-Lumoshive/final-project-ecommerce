@@ -8,8 +8,8 @@ const WishlistSection = () => {
   return (
     <div className="bg-white py-12">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Wishlist ({items.length})</h2>
-        <button className="bg-white text-black py-2 px-4 rounded-md border-black hover:bg-gray-200">
+        <h2 className="font-poppins font-semibold text-lg">Wishlist ({items.length})</h2>
+        <button className="bg-white md:text-black text-red py-3 px-6 rounded md:border border-black/[.5] md:hover:bg-black md:hover:text-white">
           Move All To Bag
         </button>
       </div>

@@ -30,19 +30,17 @@ const BestSellingSection = () => {
     <section className="bg-white py-12">
       <div className="max-w-7xl mx-auto">
         {/* Title and Pagination Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+        <div className="flex justify-between items-center md:items-end gap-3 mb-8">
           {/* Title and Description */}
           <TitleSection section={"This Month"} title="Best Selling Products" />
 
           {/* View All Products Button */}
-          <div className="text-center mt-8">
             <Link
               to={"/best-selling"}
-              className="px-4 py-2 text-white bg-red rounded-md hover:bg-gray-800"
+              className="font-poppins px-4 py-2 md:text-white text-red md:bg-red rounded min-w-24 active:brightness-90"
             >
               View all
             </Link>
-          </div>
         </div>
 
         {/* Product Grid */}
