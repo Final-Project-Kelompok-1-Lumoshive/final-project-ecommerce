@@ -5,6 +5,7 @@ import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import wishlistReducer from "./async/wishlistSlice";
 import productReducer from "./async/productSlice";
+import cartReducer from "./async/cartSlice";
 
 const persistConfig = {
   key: "root",
@@ -20,6 +21,7 @@ const store = configureStore({
     lang: persistedLang,
     wishlist: wishlistReducer,
     products: productReducer,
+    cart: cartReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

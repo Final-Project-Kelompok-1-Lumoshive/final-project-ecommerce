@@ -15,7 +15,7 @@ const initialState = {
       rating: 5,
       reviews: 65,
       category: "Men's Fashion",
-      stock: 25,
+      stock: 0,
     },
     {
       id: 2,

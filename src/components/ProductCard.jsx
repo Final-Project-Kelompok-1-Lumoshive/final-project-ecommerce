@@ -6,6 +6,7 @@ import {
   removeFromWishlist,
 } from "../redux/async/wishlistSlice";
 import { Link } from "react-router-dom";
+import { addToCart } from "../redux/async/cartSlice";
 
 const ProductCard = ({ product, isInWishlistSection = false }) => {
   const {
@@ -16,12 +17,16 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
     priceBeforeDiscount,
     rating,
     reviews,
+    stock,
   } = product;
 
   const dispatch = useDispatch();
 
   // Wishlist state
   const wishlist = useSelector((state) => state.wishlist.items);
+
+  // Cart state
+  const cartItems = useSelector((state) => state.cart.items);
 
   // Check if product is in wishlist
   const isWishlisted = wishlist.some((item) => item.id === product.id);
@@ -33,6 +38,48 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
     } else {
       dispatch(addToWishlist(product));
     }
+  };
+
+  // Cart state
+  // quantity state is used to keep track of the quantity of the product in the cart, stock is the available stock of the product
+  const [quantityCart, setQuantityCart] = useState(1);
+
+  // Add to Cart handler
+  const handleAddToCart = (event) => {
+    event.stopPropagation(); // Prevent click propagation
+    console.log("stock", stock);
+    const existingItem = cartItems.find((item) => item.id === product.id);
+    const currentQuantityCart = existingItem ? existingItem.quantity : 0;
+
+    console.log(
+      "existingItem Stock: ",
+      existingItem.title,
+      existingItem.quantity
+    );
+    console.log("currentQuantityCart: ", currentQuantityCart);
+
+    // Calculate total quantity to be added
+    const totalQuantity = currentQuantityCart + quantityCart;
+
+    // Check if the total quantity exceeds stock
+    if (totalQuantity > stock) {
+      alert(
+        `You can only add up to ${
+          stock - currentQuantityCart
+        } of this product to your cart.`
+      );
+      // return; // Exit the function if the limit is exceeded
+    }
+
+    // Check if the product is in stock
+    if (stock > 0) {
+      // Dispatch the addToCart action with the product and the quantity
+      dispatch(addToCart({ ...product, quantity: quantityCart }));
+    } else {
+      alert("Sorry, this product is out of stock."); // Alert for out of stock
+    }
+
+    event.preventDefault();
   };
 
   return (
@@ -83,7 +130,14 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
         </button>
 
         {/* Add to Cart Button Pop-up */}
-        <button className="absolute bottom-0 right-0 left-0 flex items-center justify-center bg-black text-white text-xs px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <button
+          // if stock is less than or equal to 0, always show the button
+          className={`absolute bottom-0 right-0 left-0 flex items-center justify-center bg-black text-white text-xs px-4 py-2 rounded ${
+            stock <= 0 ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+          } transition-opacity duration-300`}
+          onClick={handleAddToCart}
+          // disabled={stock <= 0}
+        >
           <span className="flex items-center gap-1 font-medium">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +153,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
               />
             </svg>
-            Add to Cart
+            {stock > 0 ? "Add to Cart" : "Out of Stock"}
           </span>
         </button>
       </Link>
