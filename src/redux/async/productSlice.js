@@ -8,20 +8,20 @@ const initialState = {
       id: 1,
       title: "Product 1",
       image:
-        "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 100,
       priceBeforeDiscount: 130,
       discount: 23,
       rating: 5,
       reviews: 65,
       category: "Men's Fashion",
-      stock: 25,
+      stock: 0,
     },
     {
       id: 2,
       title: "Product 2",
       image:
-        "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 120,
       priceBeforeDiscount: null,
       discount: null,
@@ -34,7 +34,7 @@ const initialState = {
       id: 3,
       title: "Product 3",
       image:
-        "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 150,
       priceBeforeDiscount: 200,
       discount: 25,
@@ -47,7 +47,7 @@ const initialState = {
       id: 4,
       title: "Product 4",
       image:
-        "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 90,
       priceBeforeDiscount: null,
       discount: null,
@@ -60,7 +60,7 @@ const initialState = {
       id: 5,
       title: "Product 5",
       image:
-        "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 200,
       priceBeforeDiscount: 250,
       discount: 20,
@@ -73,7 +73,7 @@ const initialState = {
       id: 6,
       title: "Product 6",
       image:
-        "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 75,
       priceBeforeDiscount: 100,
       discount: 25,
@@ -86,7 +86,7 @@ const initialState = {
       id: 7,
       title: "Product 7",
       image:
-        "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 300,
       priceBeforeDiscount: 400,
       discount: 25,
@@ -99,7 +99,7 @@ const initialState = {
       id: 8,
       title: "Product 8",
       image:
-        "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 140,
       priceBeforeDiscount: null,
       discount: null,
@@ -112,7 +112,7 @@ const initialState = {
       id: 9,
       title: "Product 9",
       image:
-        "https://images.unsplash.com/photo-1580910051074-7c59c19f2b40?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 180,
       priceBeforeDiscount: 220,
       discount: 18,
@@ -125,7 +125,7 @@ const initialState = {
       id: 10,
       title: "Product 10",
       image:
-        "https://images.unsplash.com/photo-1593032432895-d6ed3e36ca30?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 220,
       priceBeforeDiscount: 300,
       discount: 27,
@@ -138,7 +138,7 @@ const initialState = {
       id: 11,
       title: "Product 11",
       image:
-        "https://images.unsplash.com/photo-1611080626911-fc97747d4f18?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 65,
       priceBeforeDiscount: 80,
       discount: 18,
@@ -151,7 +151,7 @@ const initialState = {
       id: 12,
       title: "Product 12",
       image:
-        "https://images.unsplash.com/photo-1506807803488-8eafc153f7e1?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 300,
       priceBeforeDiscount: 360,
       discount: 17,
@@ -164,7 +164,7 @@ const initialState = {
       id: 13,
       title: "Product 13",
       image:
-        "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 110,
       priceBeforeDiscount: 150,
       discount: 27,
@@ -177,7 +177,7 @@ const initialState = {
       id: 14,
       title: "Product 14",
       image:
-        "https://images.unsplash.com/photo-1606813902997-882f239f6b39?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 275,
       priceBeforeDiscount: 350,
       discount: 21,
@@ -190,7 +190,7 @@ const initialState = {
       id: 15,
       title: "Product 15",
       image:
-        "https://images.unsplash.com/photo-1616278917771-cf9e9d57b6de?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 420,
       priceBeforeDiscount: 500,
       discount: 16,
@@ -203,7 +203,7 @@ const initialState = {
       id: 16,
       title: "Product 16",
       image:
-        "https://images.unsplash.com/photo-1548095115-d8c0781bcff9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 130,
       priceBeforeDiscount: null,
       discount: null,
@@ -216,7 +216,7 @@ const initialState = {
       id: 17,
       title: "Product 17",
       image:
-        "https://images.unsplash.com/photo-1573487812550-67bcf06d2a18?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 90,
       priceBeforeDiscount: 120,
       discount: 25,
@@ -229,7 +229,7 @@ const initialState = {
       id: 18,
       title: "Product 18",
       image:
-        "https://images.unsplash.com/photo-1580910551072-d3b97c53f5b7?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 50,
       priceBeforeDiscount: 70,
       discount: 29,
@@ -242,7 +242,7 @@ const initialState = {
       id: 19,
       title: "Product 19",
       image:
-        "https://images.unsplash.com/photo-1526040652367-b0e8f2761500?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 350,
       priceBeforeDiscount: 400,
       discount: 12,
@@ -255,7 +255,7 @@ const initialState = {
       id: 20,
       title: "Product 20",
       image:
-        "https://images.unsplash.com/photo-1576515037455-0d8d5e9e50d1?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       price: 260,
       priceBeforeDiscount: 300,
       discount: 13,

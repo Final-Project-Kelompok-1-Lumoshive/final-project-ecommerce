@@ -177,9 +177,9 @@ const Navbar = () => {
             <Link className="max-lg:hidden hover:text-red" to={"/wishlist"}>
               <IoHeartOutline size={28} />
             </Link>
-            <button className="hover:text-red">
+            <Link className="hover:text-red" to={"/cart"}>
               <IoCartOutline size={28} />
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu */}
