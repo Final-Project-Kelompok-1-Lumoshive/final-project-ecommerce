@@ -10,8 +10,8 @@ const CartSection = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
 
-  const handleQuantityChange = (id, change) => {
-    dispatch(updateCartQuantity({ id, change }));
+  const handleQuantityChange = (change) => {
+    dispatch(updateCartQuantity({ id: item.id, change, stock: item.stock }));
   };
 
   const handleRemove = (id) => {

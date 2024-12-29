@@ -134,7 +134,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
             stock <= 0 ? "opacity-100" : "opacity-0 group-hover:opacity-100"
           } transition-opacity duration-300`}
           onClick={handleAddToCart}
-          // disabled={stock <= 0}
+          disabled={stock <= 0}
         >
           <span className="flex items-center gap-1 font-medium">
             <svg

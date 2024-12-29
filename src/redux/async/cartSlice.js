@@ -2,7 +2,22 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // temp cart data
 const initialState = {
-  items: [],
+  items: [
+    {
+      id: 2,
+      title: "Product 2",
+      image:
+        "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=500&q=60",
+      price: 120,
+      priceBeforeDiscount: null,
+      discount: null,
+      rating: 4,
+      reviews: 48,
+      category: "Sport",
+      stock: 15,
+      quantity: 2,
+    },
+  ],
 };
 
 const cartSlice = createSlice({
@@ -32,8 +47,22 @@ const cartSlice = createSlice({
       const existingItem = state.items.find(
         (item) => item.id === action.payload.id
       );
+
       if (existingItem) {
-        existingItem.quantity += action.payload.change;
+        const newQuantity = existingItem.quantity + action.payload.change;
+
+        // Check if the new quantity exceeds available stock
+        if (newQuantity > action.payload.stock) {
+          alert(
+            `You can only have up to ${action.payload.stock} of this item in your cart.`
+          );
+          return; // Exit if the limit is exceeded
+        }
+
+        // Update the quantity if it's valid
+        existingItem.quantity = newQuantity;
+
+        // Remove the item if the quantity is zero or less
         if (existingItem.quantity <= 0) {
           state.items = state.items.filter(
             (item) => item.id !== action.payload.id
