@@ -4,6 +4,7 @@ import CartSummary from "./CartSummary";
 import Coupon from "./Coupon";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, updateCartQuantity } from "../redux/async/cartSlice";
+import { Link } from "react-router-dom";
 
 const CartSection = () => {
   const dispatch = useDispatch();
@@ -17,17 +18,12 @@ const CartSection = () => {
     dispatch(removeFromCart(id));
   };
 
-  const handleApplyCoupon = (code) => {
-    // Logic to apply coupon
-    console.log("Coupon applied:", code);
-  };
-
   const subtotal = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
-  const shipping = "Free"; // You can implement shipping logic here
-  const total = subtotal; // Adjust this if you have discounts
+  const shipping = "Free";
+  const total = subtotal;
 
   return (
     <div>
@@ -53,9 +49,9 @@ const CartSection = () => {
           ))}
         </tbody>
       </table>
-      <Coupon onApply={handleApplyCoupon} />
+      <Coupon />
       <CartSummary subtotal={subtotal} shipping={shipping} total={total} />
-      <button>Return To Shop</button>
+      <Link to={"/all-product"}>Return To Shop</Link>
     </div>
   );
 };
