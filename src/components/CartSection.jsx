@@ -27,16 +27,19 @@ const CartSection = () => {
   const total = subtotal;
 
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
+    <div className="container mx-auto p-4 font-poppins">
       <table className="min-w-full table-auto border-collapse mb-4">
         <thead>
-          <tr className="shadow-md">
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-            <th>Action</th>
+          <tr className="shadow">
+            <th className="w-1/2 text-left py-2 px-4 font-normal">Product</th>
+            <th className="w-1/6 text-center py-2 px-4 font-normal">Price</th>
+            <th className="w-1/6 text-center py-2 px-4 font-normal">
+              Quantity
+            </th>
+            <th className="w-1/6 text-center py-2 px-4 font-normal">
+              Subtotal
+            </th>
+            <th className="w-1/6 text-center py-2 px-4 font-normal">Action</th>
           </tr>
         </thead>
         <tbody>

@@ -4,7 +4,7 @@ const CartItem = ({ item, onQuantityChange, onRemove }) => {
   const { title, image, price, quantity } = item;
 
   return (
-    <tr className="border-b hover:bg-gray-100">
+    <tr className="border-b hover:bg-gray-100 shadow">
       <td className="flex items-center space-x-4 py-4">
         <img
           className="object-cover w-20 h-20 rounded"
@@ -14,21 +14,25 @@ const CartItem = ({ item, onQuantityChange, onRemove }) => {
         <span className="text-left font-medium">{title}</span>
       </td>
       <td className="text-center text-gray-800">${price}</td>
-      <td className="flex items-center justify-center space-x-2">
-        <button
-          className="bg-gray-300 text-gray-700 rounded px-2 py-1 hover:bg-gray-400"
-          onClick={() => onQuantityChange(item.id, -1)}
-          disabled={quantity <= 1}
-        >
-          -
-        </button>
-        <span className="font-semibold">{quantity}</span>
-        <button
-          className="bg-gray-300 text-gray-700 rounded px-2 py-1 hover:bg-gray-400"
-          onClick={() => onQuantityChange(item.id, 1)}
-        >
-          +
-        </button>
+      <td className="flex items-center justify-center">
+        <div>
+          <button
+            className="text-black px-2 py-1 hover:bg-gray-400 border"
+            onClick={() => onQuantityChange(item.id, -1)}
+            disabled={quantity <= 1}
+          >
+            -
+          </button>
+          <span className="font-semibold px-6 py-[0.3rem] border">
+            {quantity}
+          </span>
+          <button
+            className="text-black  px-2 py-1 hover:bg-gray-400 border"
+            onClick={() => onQuantityChange(item.id, 1)}
+          >
+            +
+          </button>
+        </div>
       </td>
       <td className="text-center text-gray-800">${price * quantity}</td>
       <td className="text-center">
