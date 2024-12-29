@@ -16,6 +16,7 @@ const CartSection = () => {
 
   const handleRemove = (id) => {
     dispatch(removeFromCart(id));
+    console.log("Item removed from cart:", id);
   };
 
   const subtotal = cartItems.reduce(
@@ -26,11 +27,11 @@ const CartSection = () => {
   const total = subtotal;
 
   return (
-    <div>
-      <h2>Your Cart</h2>
-      <table>
+    <div className="container mx-auto p-4">
+      <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
+      <table className="min-w-full table-auto border-collapse mb-4">
         <thead>
-          <tr>
+          <tr className="shadow-md">
             <th>Product</th>
             <th>Price</th>
             <th>Quantity</th>
