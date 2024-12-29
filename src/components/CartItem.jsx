@@ -1,4 +1,5 @@
 import React from "react";
+import { FaTrash } from "react-icons/fa";
 
 const CartItem = ({ item, onQuantityChange, onRemove }) => {
   const { title, image, price, quantity } = item;
@@ -36,11 +37,8 @@ const CartItem = ({ item, onQuantityChange, onRemove }) => {
       </td>
       <td className="text-center text-gray-800">${price * quantity}</td>
       <td className="text-center">
-        <button
-          className="text-red-600 hover:text-red-800 font-semibold"
-          onClick={() => onRemove(item.id)}
-        >
-          Remove
+        <button className="px-2" onClick={() => onRemove(item.id)}>
+          <FaTrash className="text-black hover:text-orange-600" size={20} />
         </button>
       </td>
     </tr>
