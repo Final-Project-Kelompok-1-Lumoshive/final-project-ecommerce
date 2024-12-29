@@ -68,7 +68,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
           stock - currentQuantityCart
         } of this product to your cart.`
       );
-      // return; // Exit the function if the limit is exceeded
+      return; // Exit the function if the limit is exceeded (not added to cart)
     }
 
     // Check if the product is in stock
