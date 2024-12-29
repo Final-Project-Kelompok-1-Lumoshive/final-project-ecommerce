@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 
-const Coupon = ({ onApply }) => {
+const Coupon = () => {
   const [code, setCode] = useState("");
-
-  const handleApply = () => {
-    onApply(code);
-    setCode(""); // Clear the input after applying
-  };
 
   return (
     <div>
@@ -16,7 +11,7 @@ const Coupon = ({ onApply }) => {
         onChange={(e) => setCode(e.target.value)}
         placeholder="Coupon Code"
       />
-      <button onClick={handleApply}>Apply Coupon</button>
+      <button>Apply Coupon</button>
     </div>
   );
 };

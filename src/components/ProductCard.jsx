@@ -41,8 +41,6 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
   };
 
   // Cart state
-  // quantity state is used to keep track of the quantity of the product in the cart, stock is the available stock of the product
-  const [quantityCart, setQuantityCart] = useState(1);
 
   // Add to Cart handler
   const handleAddToCart = (event) => {
@@ -59,7 +57,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
     console.log("currentQuantityCart: ", currentQuantityCart);
 
     // Calculate total quantity to be added
-    const totalQuantity = currentQuantityCart + quantityCart;
+    const totalQuantity = currentQuantityCart + 1;
 
     // Check if the total quantity exceeds stock
     if (totalQuantity > stock) {
@@ -74,7 +72,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
     // Check if the product is in stock
     if (stock > 0) {
       // Dispatch the addToCart action with the product and the quantity
-      dispatch(addToCart({ ...product, quantity: quantityCart }));
+      dispatch(addToCart({ ...product, quantity: 1 }));
     } else {
       alert("Sorry, this product is out of stock."); // Alert for out of stock
     }
