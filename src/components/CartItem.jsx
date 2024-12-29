@@ -15,8 +15,8 @@ const CartItem = ({ item, onQuantityChange, onRemove }) => {
         <span className="text-left font-medium">{title}</span>
       </td>
       <td className="text-center text-gray-800">${price}</td>
-      <td className="flex items-center justify-center">
-        <div>
+      <td>
+        <div className="flex items-center justify-center">
           <button
             className="text-black px-2 py-1 hover:bg-gray-400 border"
             onClick={() => onQuantityChange(item.id, -1)}
