@@ -75,7 +75,7 @@ const initialState = {
     {
       id: 1,
       name: "Asus ROG Strix G12",
-      image: "https://rog.asus.com/media/1704423805683.jpg",
+      image: "https://www.droidlime.com/wp-content/uploads/2024/05/Asus-ROG-Strix-G12.jpg",
     },
     {
       id: 2,
@@ -85,7 +85,7 @@ const initialState = {
     {
       id: 3,
       name: "Asus ROG Strix G12",
-      image: "https://rog.asus.com/media/1704423805683.jpg",
+      image: "https://i.ytimg.com/vi/PFQZErHiRs8/maxresdefault.jpg",
     },
     {
       id: 4,

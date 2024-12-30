@@ -19,6 +19,9 @@ import AllProduct from "./pages/AllProduct";
 import Cart from "./pages/Cart";
 import BillingDetails from "./pages/BillingDetails";
 import OrderSuccess from "./pages/OrderSuccess";
+import ProductDetail from "./pages/ProductDetail";
+import ProtectedRoute from "./components/ProtectedRoute";
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,22 +40,24 @@ const App = () => {
       <div className="pb-24">
         <Navbar />
       </div>
-      <div className="lg:mx-24 mx-6 lg:my-32 my-24">
+      <div className="lg:mx-24 mx-6 my-24">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/account/profile" element={<Account />} />
-          <Route path="/account/address" element={<Account />} />
-          <Route path="/account/order" element={<Account />} />
+          <Route path="/account/profile" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+          <Route path="/account/address" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+          <Route path="/account/order" element={<ProtectedRoute><Account /></ProtectedRoute>} />
           <Route path="/error" element={<Error />} />
-          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
           <Route path="/best-selling" element={<BestSelling />} />
           <Route path="/all-product" element={<AllProduct />} />
-          <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<BillingDetails />} />
           <Route path="/order-success" element={<OrderSuccess />} />
+          <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+          <Route path="/product/:sku" element={<ProductDetail />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
       <Footer />

@@ -7,264 +7,451 @@ const initialState = {
     {
       id: 1,
       title: "Product 1",
-      image:
+      image: [
+        "https://www.droidlime.com/wp-content/uploads/2024/05/Asus-ROG-Strix-G12.jpg",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-1",
       price: 100,
       priceBeforeDiscount: 130,
       discount: 23,
       rating: 5,
       reviews: 65,
       category: "Men's Fashion",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 0,
     },
     {
       id: 2,
       title: "Product 2",
-      image:
+      image: [
         "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-2",
       price: 120,
       priceBeforeDiscount: null,
       discount: null,
       rating: 4,
       reviews: 48,
       category: "Sport",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 15,
     },
     {
       id: 3,
       title: "Product 3",
-      image:
-        "https://images.unsplash.com/photo-1609921205586-7e8a57516512?auto=format&fit=crop&w=500&q=60",
+      image: [
+         "https://images.unsplash.com/photo-1609921205586-7e8a57516512?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-3",
       price: 150,
       priceBeforeDiscount: 200,
       discount: 25,
       rating: 4,
       reviews: 76,
       category: "Hobby",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 10,
     },
     {
       id: 4,
       title: "Product 4",
-      image:
-        "https://images.unsplash.com/photo-1706515524465-edc6fafd3657?auto=format&fit=crop&w=500&q=60",
+      image: [
+       "https://images.unsplash.com/photo-1706515524465-edc6fafd3657?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-4",
       price: 90,
       priceBeforeDiscount: null,
       discount: null,
       rating: 3,
       reviews: 23,
       category: "Kitchen Appliances",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 30,
     },
     {
       id: 5,
       title: "Product 5",
-      image:
+      image: [
         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-5",
       price: 200,
       priceBeforeDiscount: 250,
       discount: 20,
       rating: 5,
       reviews: 89,
       category: "Men's Fashion",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 5,
     },
     {
       id: 6,
       title: "Product 6",
-      image:
+      image: [
         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-6",
       price: 75,
       priceBeforeDiscount: 100,
       discount: 25,
       rating: 3,
       reviews: 33,
       category: "Sport",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 20,
     },
     {
       id: 7,
       title: "Product 7",
-      image:
+      image: [
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-7",
       price: 300,
       priceBeforeDiscount: 400,
       discount: 25,
       rating: 4,
       reviews: 71,
       category: "Hobby",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 8,
     },
     {
       id: 8,
       title: "Product 8",
-      image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=60",
+      image: [
+         "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-8",
       price: 140,
       priceBeforeDiscount: null,
       discount: null,
       rating: 4,
       reviews: 49,
       category: "Kitchen Appliances",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 18,
     },
     {
       id: 9,
       title: "Product 9",
-      image:
-        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+      image: [
+       "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-9",
       price: 180,
       priceBeforeDiscount: 220,
       discount: 18,
       rating: 4,
       reviews: 57,
       category: "Electronics",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 12,
     },
     {
       id: 10,
       title: "Product 10",
-      image:
-        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+      image: [
+         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-10",
       price: 220,
       priceBeforeDiscount: 300,
       discount: 27,
       rating: 5,
       reviews: 95,
       category: "Home Decor",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 25,
     },
     {
       id: 11,
       title: "Product 11",
-      image:
+      image: [
         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-11",
       price: 65,
       priceBeforeDiscount: 80,
       discount: 18,
       rating: 3,
       reviews: 19,
       category: "Books",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 40,
     },
     {
       id: 12,
       title: "Product 12",
-      image:
+      image: [
         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-12",
       price: 300,
       priceBeforeDiscount: 360,
       discount: 17,
       rating: 4,
       reviews: 67,
       category: "Garden",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 7,
     },
     {
       id: 13,
       title: "Product 13",
-      image:
-        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+      image: [
+         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-13",
       price: 110,
       priceBeforeDiscount: 150,
       discount: 27,
       rating: 3,
       reviews: 34,
       category: "Pet Supplies",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 9,
     },
     {
       id: 14,
       title: "Product 14",
-      image:
+      image: [
         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-14",
+
       price: 275,
       priceBeforeDiscount: 350,
       discount: 21,
       rating: 4,
       reviews: 72,
       category: "Kitchen Appliances",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 10,
     },
     {
       id: 15,
       title: "Product 15",
-      image:
+      image: [
         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-15",
+
       price: 420,
       priceBeforeDiscount: 500,
       discount: 16,
       rating: 5,
       reviews: 103,
       category: "Gaming",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 4,
     },
     {
       id: 16,
       title: "Product 16",
-      image:
-        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+      image: [
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-16",
+
       price: 130,
       priceBeforeDiscount: null,
       discount: null,
       rating: 4,
       reviews: 58,
       category: "Office Supplies",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 28,
     },
     {
       id: 17,
       title: "Product 17",
-      image:
-        "https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=500&q=60",
+      image: [
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-17",
+
       price: 90,
       priceBeforeDiscount: 120,
       discount: 25,
       rating: 4,
       reviews: 51,
       category: "Clothing",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 14,
     },
     {
       id: 18,
       title: "Product 18",
-      image:
-        "https://images.unsplash.com/photo-1564866657319-0728e627e04b?auto=format&fit=crop&w=500&q=60",
+      image: [
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-18",
+
       price: 50,
       priceBeforeDiscount: 70,
       discount: 29,
       rating: 3,
       reviews: 20,
       category: "Accessories",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 45,
     },
     {
       id: 19,
       title: "Product 19",
-      image:
-        "https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=500&q=60",
+      image: [
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-19",
+
       price: 350,
       priceBeforeDiscount: 400,
       discount: 12,
       rating: 5,
       reviews: 112,
       category: "Furniture",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 6,
     },
     {
       id: 20,
       title: "Product 20",
-      image:
-        "https://images.unsplash.com/photo-1587614382346-c7dff3bc8896?auto=format&fit=crop&w=500&q=60",
+      image: [
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+      sku: "product-20",
       price: 260,
       priceBeforeDiscount: 300,
       discount: 13,
       rating: 4,
       reviews: 64,
       category: "Beauty",
+      variantType: "Size",
+      variants: ["S", "M", "L", "XL", "XXL"],
       stock: 13,
     },
   ],
+  item: {},
 };
 
 // Utility function to get unique categories
@@ -273,11 +460,22 @@ export const getUniqueCategories = (products) => {
   return [...new Set(categories)]; // Return unique categories
 };
 
+export const getItem = (state) => state.products.item;
+
 const productsSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    getProduct: (state, action) => {
+      const product = state.items.find((item) => item.sku === action.payload);
+      if (product) {
+        state.item = product;
+      } else {
+        state.item = {};
+      }
+    },
+  },
 });
 
-export const {} = productsSlice.actions;
+export const { getProduct } = productsSlice.actions;
 export default productsSlice.reducer;

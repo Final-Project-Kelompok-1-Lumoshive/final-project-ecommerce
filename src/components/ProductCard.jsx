@@ -1,6 +1,7 @@
-import React, { useMemo } from "react";
-import { FaHeart, FaTrash } from "react-icons/fa";
+import React, { useState, useMemo } from "react";
+import { IoHeartOutline, IoTrashOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
+import {getProduct} from "../redux/async/productSlice";
 import {
   addToWishlist,
   removeFromWishlist,
@@ -10,6 +11,7 @@ import { addToCart } from "../redux/async/cartSlice";
 
 const ProductCard = ({ product, isInWishlistSection = false }) => {
   const {
+    sku,
     image = "",
     title = "Unknown Product",
     discount = 0,
@@ -54,6 +56,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
 
   // Add to Cart handler
   const handleAddToCart = (event) => {
+    event.preventDefault();
     event.stopPropagation(); // Prevent click propagation
     event.preventDefault();
 
@@ -91,11 +94,11 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
 
   return (
     <div className="relative flex w-full max-w-md flex-col overflow-hidden bg-white group">
-      <Link className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded">
+      <Link to={`/product/${sku}`} onClick={() => dispatch(getProduct(sku))} className="relative mt-3 flex lg:h-60 h-44 overflow-hidden rounded">
         {/* Product Image */}
         <img
           className="object-cover w-full h-full rounded"
-          src={image}
+          src={image[0]}
           alt={title}
         />
 
@@ -115,14 +118,27 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
 
         {/* Wishlist/Trash Icon */}
         <button
-          className="absolute top-0 right-0 m-2 rounded-full bg-white p-2 shadow-md z-10"
+          className={`absolute top-0 right-0 m-2 rounded-full p-2 shadow-md z-10 ${
+            isWishlisted ? "bg-red" : "bg-white"
+          }`}
           onClick={(event) => {
             event.stopPropagation(); // Prevent click propagation
             handleWishlist();
             event.preventDefault();
           }}
         >
-          {wishlistIcon}
+          {isWishlisted ? (
+            isInWishlistSection ? (
+              <IoTrashOutline className="text-black hover:text-gray-600" size={20} />
+            ) : (
+              <IoHeartOutline className="text-white hover:brightness-125" size={20} />
+            )
+          ) : (
+            <IoHeartOutline
+              className="text-black hover:text-red"
+              size={20}
+            />
+          )}
         </button>
 
         {/* Add to Cart Button Pop-up */}
@@ -155,17 +171,17 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
       </Link>
 
       {/* Product Details */}
-      <div className="mt-4 px-3 pb-5">
-        <a href="#">
-          <h5 className="text-xl tracking-tight text-slate-900">{title}</h5>
-        </a>
+      <div className="mt-4 pb-5">
+        <Link to={`/product/${sku}`} onClick={() => dispatch(getProduct(sku))} className="block">
+          <h5 className="font-medium">{title}</h5>
+        </Link>
         {/* Price and Rating Section */}
-        <div className="mt-2 mb-5 flex items-center justify-around md:justify-start gap-x-4 gap-y-1 flex-wrap">
+        <div className="mt-2 mb-5 flex items-center justify-start gap-x-4 gap-y-1 flex-wrap">
           {/* Price */}
           <p>
-            <span className="text-md font-bold text-black">${price}</span>
+            <span className="font-medium text-red text-black">${price}</span>
             {priceBeforeDiscount && (
-              <span className="text-md text-slate-900 line-through ml-2">
+              <span className="font-medium text-black/[.5] line-through ml-2">
                 ${priceBeforeDiscount}
               </span>
             )}
@@ -191,7 +207,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
               ))}
 
             {/* Total Reviews */}
-            <span className="mr-2 ml-2 rounded py-0.5 text-xs font-semibold">
+            <span className="mr-2 ml-2 py-0.5 text-sm text-black/[.5] font-semibold">
               ({reviews})
             </span>
           </div>

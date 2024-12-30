@@ -73,9 +73,9 @@ const Footer = () => {
         <h3 className="text-2xl font-medium">Account</h3>
         <ul className="flex flex-col gap-4">
           <Link to={"/account/profile"} className="hover:underline">My Account</Link>
-          <Link className="hover:underline">Login / Register</Link>
-          <Link className="hover:underline">Cart</Link>
-          <Link className="hover:underline">Wishlist</Link>
+          <Link to={"/auth"} className="hover:underline">Login / Register</Link>
+          <Link to={"/cart"} className="hover:underline">Cart</Link>
+          <Link to={"/wishlist"} className="hover:underline">Wishlist</Link>
           <Link className="hover:underline">Shop</Link>
         </ul>
       </div>
@@ -85,7 +85,7 @@ const Footer = () => {
           <Link className="hover:underline">Privacy Policy</Link>
           <Link className="hover:underline">Term Of Use</Link>
           <Link className="hover:underline">FAQ</Link>
-          <Link className="hover:underline">Contact</Link>
+          <Link to={"/contact"} className="hover:underline">Contact</Link>
         </ul>
       </div>
       <div className="max-md:order-5 flex flex-col justify-center gap-6">
@@ -95,10 +95,10 @@ const Footer = () => {
         </p>
         <div className="grid grid-cols-2 grid-rows-2 max-w-48">
           <img src={qrcode} alt="" className="row-span-2 w-20" />
-          <a href="">
+          <a href="https://play.google.com/" target="_blank" rel="noopener noreferrer">
             <img src={gplay} alt="" className="row-span-1 w-28 h-full py-1" />
           </a>
-          <a href="">
+          <a href="https://www.apple.com/id/app-store/" target="_blank" rel="noopener noreferrer">
             <img
               src={appstore}
               alt=""
@@ -107,16 +107,16 @@ const Footer = () => {
           </a>
         </div>
         <div className="md:flex hidden gap-6 w-48">
-          <a href="">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
             <RiFacebookLine className="text-2xl" />
           </a>
-          <a href="">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
             <RiInstagramLine className="text-2xl" />
           </a>
-          <a href="">
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
             <RiTwitterLine className="text-2xl" />
           </a>
-          <a href="">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
             <RiLinkedinLine className="text-2xl" />
           </a>
         </div>

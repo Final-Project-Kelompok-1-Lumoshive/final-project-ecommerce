@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function BreadCrumbs({ linkError }) {
+function BreadCrumbs({ linkError, sku }) {
   if (window.location.pathname === "/about") {
     return (
       <div className="font-poppins flex gap-3">
@@ -36,6 +36,14 @@ function BreadCrumbs({ linkError }) {
         <Link to="/" className="opacity-50">Home</Link>
         <p className="opacity-50">/</p>
         <p>{linkError} Error</p>
+      </div>
+    );
+  } else if (window.location.pathname === `/product/${sku}`) {
+    return (
+      <div className="font-poppins flex gap-3">
+        <Link to="/" className="opacity-50">Home</Link>
+        <p className="opacity-50">/</p>
+        <p>{sku}</p>
       </div>
     );
   }
