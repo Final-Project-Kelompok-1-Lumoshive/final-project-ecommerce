@@ -27,16 +27,26 @@ const CartSection = () => {
   const total = subtotal;
 
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
+    <div className="container mx-auto p-4 font-poppins">
+      {/* Products Table */}
       <table className="min-w-full table-auto border-collapse mb-4">
         <thead>
-          <tr className="shadow-md">
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-            <th>Action</th>
+          <tr className="shadow">
+            <th scope="col" className="w-1/2 text-left py-2 px-4 font-normal">
+              Product
+            </th>
+            <th scope="col" className="w-1/6 text-center py-2 px-4 font-normal">
+              Price
+            </th>
+            <th scope="col" className="w-1/6 text-center py-2 px-4 font-normal">
+              Quantity
+            </th>
+            <th scope="col" className="w-1/6 text-center py-2 px-4 font-normal">
+              Subtotal
+            </th>
+            <th scope="col" className="w-1/6 text-center py-2 px-4 font-normal">
+              <span className="sr-only">Action</span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -52,9 +62,21 @@ const CartSection = () => {
           ))}
         </tbody>
       </table>
-      <Coupon />
-      <CartSummary subtotal={subtotal} shipping={shipping} total={total} />
-      <Link to={"/all-product"}>Return To Shop</Link>
+      {/* Left Side */}
+      <Link to={"/all-product"} className="border-gray-900 border p-4 my-2">
+        Return To Shop
+      </Link>
+      <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex justify-between mb-4 w-1/2">
+          <Coupon />
+        </div>
+
+        {/* Right Side */}
+        {/* Cart Summary Section */}
+        <div className="w-1/2">
+          <CartSummary subtotal={subtotal} shipping={shipping} total={total} />
+        </div>
+      </div>
     </div>
   );
 };
