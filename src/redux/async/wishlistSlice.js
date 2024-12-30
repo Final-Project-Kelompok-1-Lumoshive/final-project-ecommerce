@@ -14,10 +14,12 @@ const wishlistSlice = createSlice({
       );
       if (!existingItem) {
         state.items.push(action.payload);
+        console.log("Add to wishlist:", action.payload.title);
       }
     },
     removeFromWishlist: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload.id);
+      console.log("removed from wishlist:", action.payload.title);
     },
   },
 });

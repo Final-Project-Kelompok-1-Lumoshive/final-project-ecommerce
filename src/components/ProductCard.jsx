@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo } from "react";
 import { FaHeart, FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -55,16 +55,17 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
   // Add to Cart handler
   const handleAddToCart = (event) => {
     event.stopPropagation(); // Prevent click propagation
+    event.preventDefault();
+
     console.log("stock", stock);
     const existingItem = cartItems.find((item) => item.id === product.id);
     const currentQuantityCart = existingItem ? existingItem.quantity : 0;
 
-    console.log(
-      "existingItem Stock: ",
-      existingItem.title,
-      existingItem.quantity
-    );
-    console.log("currentQuantityCart: ", currentQuantityCart);
+    // console.log(
+    //   "existingItem Stock: ",
+    //   existingItem.title,
+    //   existingItem.quantity
+    // );
 
     // Calculate total quantity to be added
     const totalQuantity = currentQuantityCart + 1;
@@ -86,8 +87,6 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
     } else {
       alert("Sorry, this product is out of stock."); // Alert for out of stock
     }
-
-    event.preventDefault();
   };
 
   return (
