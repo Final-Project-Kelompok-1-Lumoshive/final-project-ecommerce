@@ -1,5 +1,4 @@
 import React from "react";
-import { FaTrash } from "react-icons/fa";
 import { IoCloseCircle } from "react-icons/io5";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 
@@ -8,7 +7,7 @@ const CartItem = ({ item, onQuantityChange, onRemove }) => {
 
   return (
     <tr className="border-b hover:bg-gray-100 shadow">
-      <td className="flex items-center space-x-4 py-2">
+      <td className="flex flex-col sm:flex-row items-center space-x-4 py-2">
         <div className="relative m-4">
           <img
             className="object-cover w-20 h-20 rounded"
@@ -37,7 +36,7 @@ const CartItem = ({ item, onQuantityChange, onRemove }) => {
           >
             <FaMinus />
           </button>
-          <span className="font-semibold px-6 w-14 text-center py-[0.25rem] border-t border-b border-black">
+          <span className="font-semibold px-2 w-10 text-center py-[0.25rem] border-t border-b border-black">
             {quantity}
           </span>
           <button

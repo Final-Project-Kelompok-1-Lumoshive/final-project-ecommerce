@@ -10,15 +10,15 @@ import { addToCart } from "../redux/async/cartSlice";
 
 const ProductCard = ({ product, isInWishlistSection = false }) => {
   const {
-    image,
-    title,
-    discount,
-    price,
-    priceBeforeDiscount,
-    rating,
-    reviews,
-    stock,
-  } = product;
+    image = "",
+    title = "Unknown Product",
+    discount = 0,
+    price = 0,
+    priceBeforeDiscount = null,
+    rating = 0,
+    reviews = 0,
+    stock = 0,
+  } = product || {};
 
   const dispatch = useDispatch();
 
@@ -40,7 +40,17 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
     }
   };
 
-  // Cart state
+  // Wishlist icon
+
+  const wishlistIcon = isWishlisted ? (
+    isInWishlistSection ? (
+      <FaTrash className="text-black hover:text-gray-600" size={20} />
+    ) : (
+      <FaHeart className="text-red hover:text-orange-400" size={20} />
+    )
+  ) : (
+    <FaHeart className="text-gray-400 hover:text-orange-500" size={20} />
+  );
 
   // Add to Cart handler
   const handleAddToCart = (event) => {
@@ -113,18 +123,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
             event.preventDefault();
           }}
         >
-          {isWishlisted ? (
-            isInWishlistSection ? (
-              <FaTrash className="text-black hover:text-gray-600" size={20} />
-            ) : (
-              <FaHeart className="text-red hover:text-orange-400" size={20} />
-            )
-          ) : (
-            <FaHeart
-              className="text-gray-400 hover:text-orange-500"
-              size={20}
-            />
-          )}
+          {wishlistIcon}
         </button>
 
         {/* Add to Cart Button Pop-up */}
