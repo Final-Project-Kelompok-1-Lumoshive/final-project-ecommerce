@@ -62,7 +62,10 @@ const CartSection = () => {
 
       {/* Return to Shop Button */}
       <div className="inline-block my-4 py-2">
-        <Link to={"/all-product"} className="border-gray-900 border p-4 my-2">
+        <Link
+          to={"/all-product"}
+          className="border-gray-900 border rounded p-4 my-2 hover:bg-red hover:text-white transition-all duration-300"
+        >
           Return To Shop
         </Link>
       </div>

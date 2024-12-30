@@ -12,7 +12,7 @@ const Coupon = () => {
         placeholder="Coupon Code"
         className="border border-gray-900 rounded px-2 py-2"
       />
-      <button className="bg-red text-white rounded px-4 py-2 hover:bg-orange-600">
+      <button className="bg-red text-white rounded px-4 py-2 hover:bg-orange-600 border-white border-2 hover:border-black transition-all duration-500">
         Apply Coupon
       </button>
     </div>
