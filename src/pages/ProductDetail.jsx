@@ -6,7 +6,7 @@ import ProductCard from "../components/ProductCard";
 
 import { IoHeartOutline } from "react-icons/io5";
 import delivery from "../assets/icon-delivery.svg";
-import turn from "../assets/icon-return.svg";
+import turn from "../assets/Icon-return.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
