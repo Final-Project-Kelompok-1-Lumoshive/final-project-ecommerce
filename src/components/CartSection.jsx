@@ -42,11 +42,11 @@ const CartSection = () => {
     (total, item) => total + item.price * item.quantity,
     0
   );
-  const shipping = "Free";
+  const shipping = 0;
   const total = subtotal;
 
   return (
-    <div className="container mx-auto p-4 font-poppins">
+    <div className="max-w-7xl mx-auto p-4 font-poppins">
       {/* Products Table */}
       <table className="min-w-full table-auto border-collapse mb-4">
         <thead>
