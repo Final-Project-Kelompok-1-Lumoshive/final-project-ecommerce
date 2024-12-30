@@ -44,9 +44,6 @@ const CartSection = () => {
             <th scope="col" className="w-1/6 text-center py-2 px-4 font-normal">
               Subtotal
             </th>
-            <th scope="col" className="w-1/6 text-center py-2 px-4 font-normal">
-              <span className="sr-only">Action</span>
-            </th>
           </tr>
         </thead>
         <tbody>
@@ -62,18 +59,23 @@ const CartSection = () => {
           ))}
         </tbody>
       </table>
-      {/* Left Side */}
-      <Link to={"/all-product"} className="border-gray-900 border p-4 my-2">
-        Return To Shop
-      </Link>
-      <div className="flex flex-col md:flex-row justify-between">
-        <div className="flex justify-between mb-4 w-1/2">
+
+      {/* Return to Shop Button */}
+      <div className="inline-block my-4 py-2">
+        <Link to={"/all-product"} className="border-gray-900 border p-4 my-2">
+          Return To Shop
+        </Link>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-between gap-2 mb-2 mt-6">
+        {/* Left Side */}
+        <div className="flex justify-between mb-4 w-full lg:w-1/2">
           <Coupon />
         </div>
 
         {/* Right Side */}
         {/* Cart Summary Section */}
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <CartSummary subtotal={subtotal} shipping={shipping} total={total} />
         </div>
       </div>

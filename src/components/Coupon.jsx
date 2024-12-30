@@ -4,7 +4,7 @@ const Coupon = () => {
   const [code, setCode] = useState("");
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-row items-start gap-2">
       <input
         type="text"
         value={code}

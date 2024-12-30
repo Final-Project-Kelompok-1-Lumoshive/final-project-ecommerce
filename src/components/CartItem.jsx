@@ -6,12 +6,20 @@ const CartItem = ({ item, onQuantityChange, onRemove }) => {
 
   return (
     <tr className="border-b hover:bg-gray-100 shadow">
-      <td className="flex items-center space-x-4 py-4">
-        <img
-          className="object-cover w-20 h-20 rounded"
-          src={image}
-          alt={title}
-        />
+      <td className="flex items-center space-x-4 py-2">
+        <div className="relative m-4">
+          <img
+            className="object-cover w-20 h-20 rounded"
+            src={image}
+            alt={title}
+          />
+          <button
+            className="absolute -top-2 -left-2 bg-white rounded-full p-1 shadow-md hover:bg-gray-200"
+            onClick={() => onRemove(item.id)}
+          >
+            <FaTrash className="text-black hover:text-orange-600" size={16} />
+          </button>
+        </div>
         <span className="text-left font-medium">{title}</span>
       </td>
       <td className="text-center text-gray-800">${price}</td>
@@ -36,11 +44,6 @@ const CartItem = ({ item, onQuantityChange, onRemove }) => {
         </div>
       </td>
       <td className="text-center text-gray-800">${price * quantity}</td>
-      <td className="text-center">
-        <button className="px-2" onClick={() => onRemove(item.id)}>
-          <FaTrash className="text-black hover:text-orange-600" size={20} />
-        </button>
-      </td>
     </tr>
   );
 };
