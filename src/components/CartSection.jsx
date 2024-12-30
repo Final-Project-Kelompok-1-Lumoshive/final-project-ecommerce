@@ -5,6 +5,7 @@ import Coupon from "./Coupon";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, updateCartQuantity } from "../redux/async/cartSlice";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const CartSection = () => {
   const dispatch = useDispatch();
@@ -15,8 +16,26 @@ const CartSection = () => {
   };
 
   const handleRemove = (id) => {
-    dispatch(removeFromCart(id));
-    console.log("Item removed from cart (ID):", id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(removeFromCart(id));
+        console.log("Item removed from cart (ID):", id);
+
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your item has been removed from the cart.",
+          icon: "success",
+        });
+      }
+    });
   };
 
   const subtotal = cartItems.reduce(

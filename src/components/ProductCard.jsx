@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo } from "react";
 import { FaHeart, FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,15 +10,15 @@ import { addToCart } from "../redux/async/cartSlice";
 
 const ProductCard = ({ product, isInWishlistSection = false }) => {
   const {
-    image,
-    title,
-    discount,
-    price,
-    priceBeforeDiscount,
-    rating,
-    reviews,
-    stock,
-  } = product;
+    image = "",
+    title = "Unknown Product",
+    discount = 0,
+    price = 0,
+    priceBeforeDiscount = null,
+    rating = 0,
+    reviews = 0,
+    stock = 0,
+  } = product || {};
 
   const dispatch = useDispatch();
 
@@ -40,21 +40,32 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
     }
   };
 
-  // Cart state
+  // Wishlist icon
+
+  const wishlistIcon = isWishlisted ? (
+    isInWishlistSection ? (
+      <FaTrash className="text-black hover:text-gray-600" size={20} />
+    ) : (
+      <FaHeart className="text-red hover:text-orange-400" size={20} />
+    )
+  ) : (
+    <FaHeart className="text-gray-400 hover:text-orange-500" size={20} />
+  );
 
   // Add to Cart handler
   const handleAddToCart = (event) => {
     event.stopPropagation(); // Prevent click propagation
+    event.preventDefault();
+
     console.log("stock", stock);
     const existingItem = cartItems.find((item) => item.id === product.id);
     const currentQuantityCart = existingItem ? existingItem.quantity : 0;
 
-    console.log(
-      "existingItem Stock: ",
-      existingItem.title,
-      existingItem.quantity
-    );
-    console.log("currentQuantityCart: ", currentQuantityCart);
+    // console.log(
+    //   "existingItem Stock: ",
+    //   existingItem.title,
+    //   existingItem.quantity
+    // );
 
     // Calculate total quantity to be added
     const totalQuantity = currentQuantityCart + 1;
@@ -76,8 +87,6 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
     } else {
       alert("Sorry, this product is out of stock."); // Alert for out of stock
     }
-
-    event.preventDefault();
   };
 
   return (
@@ -113,18 +122,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
             event.preventDefault();
           }}
         >
-          {isWishlisted ? (
-            isInWishlistSection ? (
-              <FaTrash className="text-black hover:text-gray-600" size={20} />
-            ) : (
-              <FaHeart className="text-red hover:text-orange-400" size={20} />
-            )
-          ) : (
-            <FaHeart
-              className="text-gray-400 hover:text-orange-500"
-              size={20}
-            />
-          )}
+          {wishlistIcon}
         </button>
 
         {/* Add to Cart Button Pop-up */}
