@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import DOMPurify from "dompurify";
+import { useDispatch } from "react-redux";
+import {authToggle} from "../redux/async/authSlice";
+import { useNavigate } from "react-router-dom";
+
 import auth from "../assets/auth.png";
 
 const Auth = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -19,11 +25,15 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (isLogin) {
+      dispatch(authToggle());
+      navigate("/");
+    }
   };
   return (
     <div className="flex justify-betweeen items-center">
       <img src={auth} alt="" className="lg:block hidden max-w-xl xl:max-w-2xl -translate-x-32" />
-      <form className="flex flex-col gap-12 w-full">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-12 w-full">
         <div className="flex flex-col gap-6">
           <h2 className="font-inter font-medium text-4xl">
             {isLogin ? "Log in to Exclusive" : "Create an account"}
@@ -37,6 +47,7 @@ const Auth = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Name"
+            required
             className="w-full border-0 border-b border-black/[.5] py-2 focus:outline-0 focus:border-red duration-200"
           />
           <input
@@ -55,6 +66,7 @@ const Auth = () => {
             value={formData.password}
             onChange={handleChange}
             placeholder="Password"
+            required
             className="w-full border-0 border-b border-black/[.5] py-2 focus:outline-0 focus:border-red duration-200"
           />
         </div>
@@ -64,7 +76,6 @@ const Auth = () => {
           } gap-4`}
         >
           <button
-            onClick={handleSubmit}
             className={`bg-red ${
               isLogin && "lg:max-w-fit px-12"
             } text-white font-medium py-4 w-full rounded-md`}

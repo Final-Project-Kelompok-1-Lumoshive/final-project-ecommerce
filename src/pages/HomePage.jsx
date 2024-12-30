@@ -6,10 +6,10 @@ import BestSellingSection from "../components/BestSellingSection";
 import TitleSection from "../components/TitleSection";
 import Banner from "../components/Banner";
 
-import { A11y, Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { A11y, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import delivery from "../assets/icon-delivery.svg";
 import customer from "../assets/Icon-Customer service.svg";
@@ -65,12 +65,12 @@ const HomePage = () => {
         </div>
         <Swiper
           slidesPerView={slides}
-          spaceBetween={30}
+          spaceBetween={20}
           modules={[Navigation, Pagination, A11y]}
           className="flex items-center lg:my-10 mt-10"
         >
           <div className="hidden">
-          <CategoryButton ref={swiperRef} />
+            <CategoryButton ref={swiperRef} />
           </div>
           {category.map((item) => (
             <SwiperSlide key={item.name}>
@@ -82,14 +82,18 @@ const HomePage = () => {
           ))}
         </Swiper>
       </div>
-      <BestSellingSection />
+      <div className="my-12">
+        <BestSellingSection />
+      </div>
       <Banner />
-      <AllProductSection
-        showMore={false}
-        itemsPerPage={8}
-        showPagination={true}
-        products={products}
-      />
+      <div className="my-12">
+        <AllProductSection
+          showMore={false}
+          itemsPerPage={8}
+          showPagination={true}
+          products={products}
+        />
+      </div>
       <RecommendSection />
       <div className="grid md:grid-cols-6 grid-cols-2 lg:gap-20 gap-4">
         <div className="md:col-span-2 col-span-1 mx-auto font-poppins text-center md:py-14 py-4 max-md:max-w-40">

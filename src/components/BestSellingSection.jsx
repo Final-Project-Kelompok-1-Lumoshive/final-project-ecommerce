@@ -27,7 +27,7 @@ const BestSellingSection = () => {
   const currentItems = products.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white">
       <div className="mx-auto">
         {/* Title and Pagination Section */}
         <div className="flex justify-between items-center md:items-end gap-3 mb-8">
@@ -44,7 +44,7 @@ const BestSellingSection = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6 gap-3 justify-items-center">
           {currentItems.map((product) => (
             <ProductCard
               key={product.id}
