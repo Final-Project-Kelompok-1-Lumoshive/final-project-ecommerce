@@ -16,7 +16,7 @@ const CartSection = () => {
 
   const handleRemove = (id) => {
     dispatch(removeFromCart(id));
-    console.log("Item removed from cart:", id);
+    console.log("Item removed from cart (ID):", id);
   };
 
   const subtotal = cartItems.reduce(

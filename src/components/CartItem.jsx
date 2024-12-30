@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
+import { IoCloseCircle } from "react-icons/io5";
 
 const CartItem = ({ item, onQuantityChange, onRemove }) => {
   const { title, image, price, quantity } = item;
@@ -14,10 +15,10 @@ const CartItem = ({ item, onQuantityChange, onRemove }) => {
             alt={title}
           />
           <button
-            className="absolute -top-2 -left-2 bg-white rounded-full p-1 shadow-md hover:bg-gray-200"
+            className="absolute -top-2 -left-2 bg-white rounded-full  shadow-md"
             onClick={() => onRemove(item.id)}
           >
-            <FaTrash className="text-black hover:text-orange-600" size={16} />
+            <IoCloseCircle className="text-red hover:opacity-30" size={24} />
           </button>
         </div>
         <span className="text-left font-medium">{title}</span>
