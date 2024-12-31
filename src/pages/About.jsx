@@ -12,10 +12,12 @@ import delivery from "../assets/icon-delivery.svg";
 import customer from "../assets/Icon-Customer service.svg";
 import secure from "../assets/Icon-secure.svg";
 import BreadCrumbs from "../components/BreadCrumbs.jsx";
+import SeoComponent from "../components/SeoComponent.jsx";
 
 const About = () => {
   return (
     <div>
+      <SeoComponent page="about" />
       <BreadCrumbs />
       <div className="flex lg:flex-row flex-col lg:justify-between items-center max-lg:gap-12 my-6">
         <div className="flex flex-col gap-10">

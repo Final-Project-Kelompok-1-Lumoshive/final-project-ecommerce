@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import DOMPurify from "dompurify";
 
@@ -16,6 +17,7 @@ import {
 } from "react-icons/ri";
 
 const Footer = () => {
+  const lang = useSelector((state) => state.lang.lang);
   const [email, setEmail] = useState("");
 
   const handleChange = (e) => {
@@ -63,20 +65,20 @@ const Footer = () => {
         </div>
       </div>
       <div className="max-md:order-3 flex flex-col justify-center gap-6 max-md:min-w-48">
-        <h3 className="text-2xl font-medium">Support</h3>
+        <h3 className="text-2xl font-medium">{lang === "en" ? "Support" : "Bantuan"}</h3>
         <p className="max-w-36">
           Jl. Gatot Subroto Jakarta, 12930, Indonesia. exclusive@gmail.com
         </p>
         <a href="tel:+62815-8888-9999">+62815-8888-9999</a>
       </div>
       <div className="max-md:order-4 flex flex-col justify-center gap-6">
-        <h3 className="text-2xl font-medium">Account</h3>
+        <h3 className="text-2xl font-medium">{lang === "en" ? "Account" : "Akun"}</h3>
         <ul className="flex flex-col gap-4">
           <Link to={"/account/profile"} className="hover:underline">My Account</Link>
           <Link to={"/auth"} className="hover:underline">Login / Register</Link>
-          <Link to={"/cart"} className="hover:underline">Cart</Link>
+          <Link to={"/cart"} className="hover:underline">{lang === "en" ? "Cart" : "Keranjang"}</Link>
           <Link to={"/wishlist"} className="hover:underline">Wishlist</Link>
-          <Link className="hover:underline">Shop</Link>
+          <Link className="hover:underline">{lang === "en" ? "Shop" : "Toko"}</Link>
         </ul>
       </div>
       <div className="max-md:order-2 flex flex-col justify-center gap-6">
@@ -85,7 +87,7 @@ const Footer = () => {
           <Link className="hover:underline">Privacy Policy</Link>
           <Link className="hover:underline">Term Of Use</Link>
           <Link className="hover:underline">FAQ</Link>
-          <Link to={"/contact"} className="hover:underline">Contact</Link>
+          <Link to={"/contact"} className="hover:underline">{lang === "en" ? "Contact" : "Kontak"}</Link>
         </ul>
       </div>
       <div className="max-md:order-5 flex flex-col justify-center gap-6">

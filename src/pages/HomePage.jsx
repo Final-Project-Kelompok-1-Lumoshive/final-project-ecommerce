@@ -17,6 +17,7 @@ import secure from "../assets/Icon-secure.svg";
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
 import CategoryButton from "../components/CategoryButton";
 import RecommendSection from "../components/RecommendSection";
+import SeoComponent from "../components/SeoComponent";
 
 const HomePage = () => {
   const { category } = useSelector((state) => state.fetch);
@@ -44,6 +45,7 @@ const HomePage = () => {
   }, []);
   return (
     <div>
+      <SeoComponent page="home" />
       <Banner />
       <div className="lg:py-14 pt-12">
         <div className="flex justify-between items-end w-full">
@@ -74,8 +76,8 @@ const HomePage = () => {
           </div>
           {category.map((item) => (
             <SwiperSlide key={item.name}>
-              <Link className="font-poppins text-center flex flex-col justify-center items-center gap-4 border border-black/[.3] rounded p-6 w-full select-none hover:bg-black/[.05]">
-                <img src={item.icon} alt="" />
+              <Link to="/all-product" className="font-poppins text-center flex flex-col justify-center items-center gap-4 border border-black/[.3] rounded p-6 w-full select-none hover:bg-black/[.05]">
+                <img src={item.icon} alt="" className="max-h-12" />
                 <p>{item.name}</p>
               </Link>
             </SwiperSlide>

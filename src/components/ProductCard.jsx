@@ -44,15 +44,15 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
 
   // Wishlist icon
 
-  const wishlistIcon = isWishlisted ? (
-    isInWishlistSection ? (
-      <FaTrash className="text-black hover:text-gray-600" size={20} />
-    ) : (
-      <FaHeart className="text-red hover:text-orange-400" size={20} />
-    )
-  ) : (
-    <FaHeart className="text-gray-400 hover:text-orange-500" size={20} />
-  );
+  // const wishlistIcon = isWishlisted ? (
+  //   isInWishlistSection ? (
+  //     <FaTrash className="text-black hover:text-gray-600" size={20} />
+  //   ) : (
+  //     <FaHeart className="text-red hover:text-orange-400" size={20} />
+  //   )
+  // ) : (
+  //   <FaHeart className="text-gray-400 hover:text-orange-500" size={20} />
+  // );
 
   // Add to Cart handler
   const handleAddToCart = (event) => {
@@ -129,7 +129,7 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
         >
           {isWishlisted ? (
             isInWishlistSection ? (
-              <IoTrashOutline className="text-black hover:text-gray-600" size={20} />
+              <IoTrashOutline className="text-white hover:text-gray-600" size={20} />
             ) : (
               <IoHeartOutline className="text-white hover:brightness-125" size={20} />
             )
