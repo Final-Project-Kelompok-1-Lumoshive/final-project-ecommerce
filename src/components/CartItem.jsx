@@ -5,13 +5,15 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 const CartItem = ({ item, onQuantityChange, onRemove }) => {
   const { title, image, price, quantity } = item;
 
+  console.log("cart image: ", image);
+
   return (
     <tr className="border-b hover:bg-gray-100 shadow">
       <td className="flex flex-col sm:flex-row items-center space-x-4 py-2">
         <div className="relative m-4">
           <img
             className="object-cover w-20 h-20 rounded"
-            src={image}
+            src={image[0]}
             alt={title}
           />
           <button
