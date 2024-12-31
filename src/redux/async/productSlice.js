@@ -30,7 +30,7 @@ const initialState = {
       id: 2,
       title: "Product 2",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -52,7 +52,7 @@ const initialState = {
       id: 3,
       title: "Product 3",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+         "https://images.unsplash.com/photo-1609921205586-7e8a57516512?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -74,7 +74,7 @@ const initialState = {
       id: 4,
       title: "Product 4",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+       "https://images.unsplash.com/photo-1706515524465-edc6fafd3657?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -96,7 +96,7 @@ const initialState = {
       id: 5,
       title: "Product 5",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -118,7 +118,7 @@ const initialState = {
       id: 6,
       title: "Product 6",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -140,7 +140,7 @@ const initialState = {
       id: 7,
       title: "Product 7",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -162,7 +162,7 @@ const initialState = {
       id: 8,
       title: "Product 8",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+         "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -184,7 +184,7 @@ const initialState = {
       id: 9,
       title: "Product 9",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+       "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -206,7 +206,7 @@ const initialState = {
       id: 10,
       title: "Product 10",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -228,7 +228,7 @@ const initialState = {
       id: 11,
       title: "Product 11",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -250,7 +250,7 @@ const initialState = {
       id: 12,
       title: "Product 12",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -272,7 +272,7 @@ const initialState = {
       id: 13,
       title: "Product 13",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -294,7 +294,7 @@ const initialState = {
       id: 14,
       title: "Product 14",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -302,6 +302,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
       sku: "product-14",
+
       price: 275,
       priceBeforeDiscount: 350,
       discount: 21,
@@ -316,7 +317,7 @@ const initialState = {
       id: 15,
       title: "Product 15",
       image: [
-        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -324,6 +325,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
       sku: "product-15",
+
       price: 420,
       priceBeforeDiscount: 500,
       discount: 16,
@@ -346,6 +348,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
       sku: "product-16",
+
       price: 130,
       priceBeforeDiscount: null,
       discount: null,
@@ -368,6 +371,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
       sku: "product-17",
+
       price: 90,
       priceBeforeDiscount: 120,
       discount: 25,
@@ -390,6 +394,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
       sku: "product-18",
+
       price: 50,
       priceBeforeDiscount: 70,
       discount: 29,
@@ -412,6 +417,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
       sku: "product-19",
+
       price: 350,
       priceBeforeDiscount: 400,
       discount: 12,

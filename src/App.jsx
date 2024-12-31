@@ -17,8 +17,11 @@ import Wishlist from "./pages/Wishlist";
 import BestSelling from "./pages/BestSelling";
 import AllProduct from "./pages/AllProduct";
 import Cart from "./pages/Cart";
+import BillingDetails from "./pages/BillingDetails";
+import OrderSuccess from "./pages/OrderSuccess";
 import ProductDetail from "./pages/ProductDetail";
 import ProtectedRoute from "./components/ProtectedRoute";
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -50,6 +53,8 @@ const App = () => {
           <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
           <Route path="/best-selling" element={<BestSelling />} />
           <Route path="/all-product" element={<AllProduct />} />
+          <Route path="/checkout" element={<BillingDetails />} />
+          <Route path="/order-success" element={<OrderSuccess />} />
           <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
           <Route path="/product/:sku" element={<ProductDetail />} />
           <Route path="*" element={<Error />} />
