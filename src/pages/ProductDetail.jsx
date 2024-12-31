@@ -21,6 +21,9 @@ import "swiper/css/thumbs";
 import { Pagination, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import SeoComponent from "../components/SeoComponent";
 
+// rating
+import { IoStarOutline, IoStarHalf, IoStar } from "react-icons/io5";
+
 const ProductDetail = () => {
   const { sku } = useParams();
   const { item } = useSelector((state) => state.products);
@@ -40,6 +43,18 @@ const ProductDetail = () => {
   const [isWishlisted, setIsWishlisted] = useState(false);
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+  // Rating
+  // Calculate the number of full stars and half stars (max 5 stars)
+  const fullStars = Math.floor(item.rating); // Number of full stars
+  const hasHalfStar = item.rating % 1 !== 0; // Check if there's a decimal (half star)
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0); // Remaining empty stars
+
+  console.log("Item:", item);
+  console.log("Products:", products);
+  console.log("Full Stars:", fullStars);
+  console.log("Half Star:", hasHalfStar);
+  console.log("Empty Stars:", emptyStars);
 
   return (
     <div>
@@ -93,6 +108,24 @@ const ProductDetail = () => {
         <div className="flex flex-col justify-start item-center gap-4 w-full">
           <h2 className="font-inter text-xl font-semibold">{item.title}</h2>
           <div className="font-poppins text-sm flex items-center gap-2">
+            {/* Stars */}
+            {/* Render full stars */}
+            {Array(fullStars)
+              .fill(0)
+              .map((_, i) => (
+                <IoStar key={`full-${i}`} className="text-yellow-400 h-5 w-5" />
+              ))}
+            {/* Render half star if applicable */}
+            {hasHalfStar && <IoStarHalf className="text-yellow-400 h-5 w-5" />}
+            {/* Render empty stars */}
+            {Array(emptyStars)
+              .fill(0)
+              .map((_, i) => (
+                <IoStarOutline
+                  key={`empty-${i}`}
+                  className="text-gray-300 h-5 w-5"
+                />
+              ))}
             <p className="opacity-50">({item.reviews} Reviews)</p>
             <p className="opacity-50">|</p>
             <p className={`${item.stock === 0 ? "text-red" : "text-green"}`}>
@@ -121,7 +154,9 @@ const ProductDetail = () => {
             </div>
           </div>
           <div className="hidden lg:flex items-center gap-2 my-6">
-            <div className={`${item.stock === 0 ? "hidden" : "flex"} items-center`}>
+            <div
+              className={`${item.stock === 0 ? "hidden" : "flex"} items-center`}
+            >
               <button
                 onClick={() => setQuantity(quantity - 1)}
                 disabled={quantity === 1}
@@ -228,19 +263,28 @@ const ProductDetail = () => {
         >
           <IoHeartOutline />
         </button>
-        <button onClick={() => setIsModalOpen(true)} className="flex justify-center items-center w-full h-10 bg-red text-medium text-white rounded active:brightness-90">
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="flex justify-center items-center w-full h-10 bg-red text-medium text-white rounded active:brightness-90"
+        >
           Add to Cart
         </button>
       </div>
       <div
-        className={`${isModalOpen ? "z-50" : "pointer-events-none"} fixed bottom-0 left-0 right-0 flex w-full items-center`}
+        className={`${
+          isModalOpen ? "z-50" : "pointer-events-none"
+        } fixed bottom-0 left-0 right-0 flex w-full items-center`}
       >
-        <div className={`${isModalOpen ? "translate-y-0" : "translate-y-[200%]"} bg-white py-4 px-6 flex flex-col gap-3 w-full rounded-t-3xl trannsition-all duration-300`}>
+        <div
+          className={`${
+            isModalOpen ? "translate-y-0" : "translate-y-[200%]"
+          } bg-white py-4 px-6 flex flex-col gap-3 w-full rounded-t-3xl trannsition-all duration-300`}
+        >
           <div className="relative font-poppins font-medium flex justify-center py-4 border-b border-black/[.5]">
             Varian Product
             <div className="absolute right-0">
-            <button
-            onClick={() => setIsModalOpen(false)}
+              <button
+                onClick={() => setIsModalOpen(false)}
                 className="relative flex justify-end w-full p-2"
               >
                 <div className="absolute h-1 w-6 bg-black rounded-full rotate-45"></div>
@@ -252,27 +296,33 @@ const ProductDetail = () => {
             <img src={item.image[0]} alt="" className="max-w-36" />
             <div className="flex flex-col gap-1">
               <p className="font-medium">${item.price}</p>
-              <p className="text-xs">{item.stock === 0 ? "Out of Stock" : "In Stock"}</p>
+              <p className="text-xs">
+                {item.stock === 0 ? "Out of Stock" : "In Stock"}
+              </p>
             </div>
           </div>
           <p className="font-poppins">{item.variantType}</p>
           <div className="font-poppins flex gap-2 items-center">
-              {item.variants.map((variant, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedVariant(variant)}
-                  className={`text-sm text-center min-w-10 ${
-                    selectedVariant === variant
-                      ? "bg-red text-white border-red"
-                      : "border-black/[.5]"
-                  } border p-2 rounded`}
-                >
-                  {variant}
-                </button>
-              ))}
-            </div>
-          <p className={`${item.stock === 0 ? "hidden" : "flex"} font-poppins`}>Quantity</p>
-          <div className={`${item.stock === 0 ? "hidden" : "flex"} items-center`}>
+            {item.variants.map((variant, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedVariant(variant)}
+                className={`text-sm text-center min-w-10 ${
+                  selectedVariant === variant
+                    ? "bg-red text-white border-red"
+                    : "border-black/[.5]"
+                } border p-2 rounded`}
+              >
+                {variant}
+              </button>
+            ))}
+          </div>
+          <p className={`${item.stock === 0 ? "hidden" : "flex"} font-poppins`}>
+            Quantity
+          </p>
+          <div
+            className={`${item.stock === 0 ? "hidden" : "flex"} items-center`}
+          >
             <button
               onClick={() => setQuantity(quantity - 1)}
               disabled={quantity === 1}
@@ -316,8 +366,16 @@ const ProductDetail = () => {
             </button>
           </div>
           <div className="font-poppins flex items-center w-full gap-2 mt-6">
-            <button onClick={() => setIsModalOpen(false)} className="bg-[#F5F5F5] h-10 w-full rounded active:brightness-95">Close</button>
-            <button disabled={item.stock === 0} className="bg-red text-white h-10 w-full active:brightness-95 rounded">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="bg-[#F5F5F5] h-10 w-full rounded active:brightness-95"
+            >
+              Close
+            </button>
+            <button
+              disabled={item.stock === 0}
+              className="bg-red text-white h-10 w-full active:brightness-95 rounded"
+            >
               Add to Cart
             </button>
           </div>
