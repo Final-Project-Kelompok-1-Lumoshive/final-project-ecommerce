@@ -8,6 +8,7 @@ import {
 } from "../redux/async/wishlistSlice";
 import { Link } from "react-router-dom";
 import { addToCart } from "../redux/async/cartSlice";
+import { IoStarOutline, IoStarHalf, IoStar } from "react-icons/io5";
 
 const ProductCard = ({ product, isInWishlistSection = false }) => {
   const {
@@ -79,6 +80,12 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
       alert("Sorry, this product is out of stock."); // Alert for out of stock
     }
   };
+
+  // Rating
+  // Calculate the number of full stars and half stars (max 5 stars)
+  const fullStars = Math.floor(rating); // Number of full stars
+  const hasHalfStar = rating % 1 !== 0; // Check if there's a decimal (half star)
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0); // Remaining empty stars
 
   return (
     <div className="relative flex w-full max-w-md flex-col overflow-hidden bg-white group">
@@ -188,21 +195,23 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
 
           {/* Rating */}
           <div className="flex items-center justify-center">
-            {Array(5)
+            {/* Stars */}
+            {/* Render full stars */}
+            {Array(fullStars)
               .fill(0)
               .map((_, i) => (
-                <svg
-                  key={i}
-                  aria-hidden="true"
-                  className={`h-5 w-5 ${
-                    i < rating ? "text-yellow-400" : "text-gray-300"
-                  }`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
+                <IoStar key={`full-${i}`} className="text-yellow-400 h-5 w-5" />
+              ))}
+            {/* Render half star if applicable */}
+            {hasHalfStar && <IoStarHalf className="text-yellow-400 h-5 w-5" />}
+            {/* Render empty stars */}
+            {Array(emptyStars)
+              .fill(0)
+              .map((_, i) => (
+                <IoStarOutline
+                  key={`empty-${i}`}
+                  className="text-gray-300 h-5 w-5"
+                />
               ))}
 
             {/* Total Reviews */}

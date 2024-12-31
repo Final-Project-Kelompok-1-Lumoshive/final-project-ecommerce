@@ -41,7 +41,7 @@ const initialState = {
       price: 120,
       priceBeforeDiscount: null,
       discount: null,
-      rating: 4,
+      rating: 4.2,
       reviews: 48,
       category: "Sport",
       variantType: "Size",
@@ -52,7 +52,7 @@ const initialState = {
       id: 3,
       title: "Product 3",
       image: [
-         "https://images.unsplash.com/photo-1609921205586-7e8a57516512?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1609921205586-7e8a57516512?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -74,7 +74,7 @@ const initialState = {
       id: 4,
       title: "Product 4",
       image: [
-       "https://images.unsplash.com/photo-1706515524465-edc6fafd3657?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1706515524465-edc6fafd3657?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -162,7 +162,7 @@ const initialState = {
       id: 8,
       title: "Product 8",
       image: [
-         "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -184,7 +184,7 @@ const initialState = {
       id: 9,
       title: "Product 9",
       image: [
-       "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -206,7 +206,7 @@ const initialState = {
       id: 10,
       title: "Product 10",
       image: [
-         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
@@ -272,7 +272,7 @@ const initialState = {
       id: 13,
       title: "Product 13",
       image: [
-         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
