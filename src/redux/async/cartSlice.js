@@ -6,8 +6,12 @@ const initialState = {
     {
       id: 2,
       title: "Product 2",
-      image:
+      image: [
         "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
       price: 120,
       priceBeforeDiscount: null,
       discount: null,
@@ -20,8 +24,12 @@ const initialState = {
     {
       id: 5,
       title: "Product 5",
-      image:
+      image: [
         "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
+      ],
       price: 200,
       priceBeforeDiscount: 250,
       discount: 20,
