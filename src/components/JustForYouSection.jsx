@@ -30,15 +30,18 @@ const JustForYouSection = () => {
     <section className="bg-white py-12">
       <div className="mx-auto">
         {/* Title and Pagination Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-          {/* Title and Description */}
-          <TitleSection section="" title="Just For You" />
+        <div className="flex justify-between items-center mb-8">
+          {/* Title */}
+          <div className='flex gap-4 items-center'>
+                <div className='md:flex hidden w-5 h-10 bg-red rounded'></div>
+                <p className='font-poppins font-semibold text-lg'>Just For You</p>
+          </div>
 
           {/* View All Products Button */}
-          <div className="text-center mt-8">
+          <div className="text-center">
             <Link
               to={"/best-selling"}
-              className="px-4 py-2 text-white bg-red rounded hover:bg-orange-600"
+              className="bg-white md:text-black text-red py-3 px-6 rounded md:border border-black/[.5] md:hover:bg-black md:hover:text-white"
             >
               See all
             </Link>

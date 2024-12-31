@@ -4,6 +4,8 @@ import TitleSection from "./TitleSection";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
+
 //itemsPerPage is the default number of items to show per page
 //itemsToShow is the number of items to show initially based on itemsPerPage
 //showMore is a boolean that determines whether to show the "Show More" button or not
@@ -45,46 +47,50 @@ const AllProductSection = ({
     : products.slice(startIndex, startIndex + itemsPerPage); // For pagination
 
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white">
       <div className="mx-auto">
         {/* Title and Pagination Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+        <div className="flex justify-between items-center md:items-end mb-8">
           {/* Title and Description */}
           <TitleSection section={section} title={title} />
 
           {/* Pagination */}
-          <div className="text-center">
-            {showPagination && (
-              <div className="flex justify-center items-center gap-4 mt-4 md:mt-0">
-                <button
-                  onClick={handlePrevPage}
-                  disabled={currentPage === 1}
-                  className={`px-4 py-2 text-black-500 font-medium ${
-                    currentPage === 1
-                      ? "text-gray-400 cursor-not-allowed"
-                      : "hover:underline"
-                  }`}
-                >
-                  Prev
-                </button>
-                <button
-                  onClick={handleNextPage}
-                  disabled={currentPage === totalPages}
-                  className={`px-4 py-2 text-black-500 font-medium ${
-                    currentPage === totalPages
-                      ? "text-gray-400 cursor-not-allowed"
-                      : "hover:underline"
-                  }`}
-                >
-                  Next
-                </button>
-              </div>
-            )}
-          </div>
+          <Link
+            to={"/all-product"}
+            className="md:hidden flex font-poppins px-4 py-2 text-red min-w-24 active:brightness-90"
+          >
+            View all
+          </Link>
+          {showPagination && (
+            <div className="md:flex hidden gap-2">
+              <button
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+                className={`${
+                  currentPage === 1
+                    ? "opacity-50"
+                    : "hover:bg-black/[.1] active:bg-black/[.2]"
+                } bg-[#F5F5F5] h-10 w-10 rounded-full flex justify-center items-center`}
+              >
+                <IoArrowBackOutline className="text-2xl" />
+              </button>
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className={`${
+                  currentPage === totalPages
+                    ? "opacity-50"
+                    : "hover:bg-black/[.1] active:bg-black/[.2]"
+                } bg-[#F5F5F5] h-10 w-10 rounded-full flex justify-center items-center`}
+              >
+                <IoArrowForwardOutline className="text-2xl" />
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6 gap-3 justify-items-center">
           {currentItems.map((product) => (
             <ProductCard
               key={product.id}
@@ -95,18 +101,18 @@ const AllProductSection = ({
         </div>
 
         {/* View All Products Button */}
-        <div className="text-center mt-8">
+        <div className="max-md:hidden text-center mt-8">
           {showMore ? (
             <button
               onClick={handleShowMore}
-              className="px-4 py-2 text-white bg-red rounded hover:bg-orange-600"
+              className="px-4 py-2 text-white bg-red rounded active:brightness-90"
             >
               Show More
             </button>
           ) : (
             <Link
               to="/all-product"
-              className="px-4 py-2 text-white bg-red rounded hover:bg-orange-600"
+              className="px-4 py-2 text-white bg-red rounded active:brightness-90"
             >
               View all Products
             </Link>

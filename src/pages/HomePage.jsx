@@ -6,10 +6,10 @@ import BestSellingSection from "../components/BestSellingSection";
 import TitleSection from "../components/TitleSection";
 import Banner from "../components/Banner";
 
-import { A11y, Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { A11y, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import delivery from "../assets/icon-delivery.svg";
 import customer from "../assets/Icon-Customer service.svg";
@@ -17,6 +17,7 @@ import secure from "../assets/Icon-secure.svg";
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
 import CategoryButton from "../components/CategoryButton";
 import RecommendSection from "../components/RecommendSection";
+import SeoComponent from "../components/SeoComponent";
 
 const HomePage = () => {
   const { category } = useSelector((state) => state.fetch);
@@ -44,10 +45,9 @@ const HomePage = () => {
   }, []);
   return (
     <div>
-      <div className="-translate-y-8">
+      <SeoComponent page="home" />
       <Banner />
-      </div>
-      <div className="py-16">
+      <div className="lg:py-14 pt-12">
         <div className="flex justify-between items-end w-full">
           <TitleSection section="Categories" title="Browse By Category" />
           <div className="md:flex hidden gap-2">
@@ -67,34 +67,38 @@ const HomePage = () => {
         </div>
         <Swiper
           slidesPerView={slides}
-          spaceBetween={30}
+          spaceBetween={20}
           modules={[Navigation, Pagination, A11y]}
-          className="flex items-center my-10"
+          className="flex items-center lg:my-10 mt-10"
         >
           <div className="hidden">
-          <CategoryButton ref={swiperRef} />
+            <CategoryButton ref={swiperRef} />
           </div>
           {category.map((item) => (
             <SwiperSlide key={item.name}>
-              <Link className="font-poppins text-center flex flex-col justify-center items-center gap-4 border border-black/[.3] rounded p-6 w-full select-none hover:bg-black/[.05]">
-                <img src={item.icon} alt="" />
+              <Link to="/all-product" className="font-poppins text-center flex flex-col justify-center items-center gap-4 border border-black/[.3] rounded p-6 w-full select-none hover:bg-black/[.05]">
+                <img src={item.icon} alt="" className="max-h-12" />
                 <p>{item.name}</p>
               </Link>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-      <BestSellingSection />
+      <div className="my-12">
+        <BestSellingSection />
+      </div>
       <Banner />
-      <AllProductSection
-        showMore={false}
-        itemsPerPage={8}
-        showPagination={true}
-        products={products}
-      />
+      <div className="my-12">
+        <AllProductSection
+          showMore={false}
+          itemsPerPage={8}
+          showPagination={true}
+          products={products}
+        />
+      </div>
       <RecommendSection />
-      <div className="flex flex-wrap justify-center items-center lg:gap-20 gap-4">
-        <div className="font-poppins text-center md:py-14 py-4 max-md:max-w-40">
+      <div className="grid md:grid-cols-6 grid-cols-2 lg:gap-20 gap-4">
+        <div className="md:col-span-2 col-span-1 mx-auto font-poppins text-center md:py-14 py-4 max-md:max-w-40">
           <img
             src={delivery}
             className="text-black bg-black text-white p-2 rounded-full outline outline-8 outline-black/[.3] mx-auto mb-8 max-md:scale-75"
@@ -106,7 +110,7 @@ const HomePage = () => {
             Free delivery for all orders over $140
           </p>
         </div>
-        <div className="font-poppins text-center md:py-14 py-4 max-md:max-w-40">
+        <div className="md:col-span-2 col-span-1 mx-auto font-poppins text-center md:py-14 py-4 max-md:max-w-40">
           <img
             src={customer}
             className="text-black bg-black text-white p-2 rounded-full outline outline-8 outline-black/[.3] mx-auto mb-8 max-md:scale-75"
@@ -116,7 +120,7 @@ const HomePage = () => {
           </h2>
           <p className="md:text-base text-xs">Friendly 24/7 customer support</p>
         </div>
-        <div className="font-poppins text-center md:py-14 py-4 max-md:max-w-40">
+        <div className="md:col-span-2 col-span-2 mx-auto font-poppins text-center md:py-14 py-4 max-md:max-w-40">
           <img
             src={secure}
             className="text-black bg-black text-white p-2 rounded-full outline outline-8 outline-black/[.3] mx-auto mb-8 max-md:scale-75"

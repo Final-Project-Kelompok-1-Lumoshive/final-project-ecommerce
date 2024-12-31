@@ -27,26 +27,24 @@ const BestSellingSection = () => {
   const currentItems = products.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white">
       <div className="mx-auto">
         {/* Title and Pagination Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+        <div className="flex justify-between items-center md:items-end gap-3 mb-8">
           {/* Title and Description */}
           <TitleSection section={"This Month"} title="Best Selling Products" />
 
           {/* View All Products Button */}
-          <div className="text-center mt-8">
             <Link
               to={"/best-selling"}
-              className="px-4 py-2 text-white bg-red rounded hover:bg-orange-600"
+              className="font-poppins px-4 py-2 md:text-white text-red md:bg-red rounded min-w-24 active:brightness-90"
             >
               View all
             </Link>
-          </div>
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6 gap-3 justify-items-center">
           {currentItems.map((product) => (
             <ProductCard
               key={product.id}

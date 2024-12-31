@@ -53,29 +53,20 @@ const initialState = {
     }
   ],
   category: [
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
-    {name: "Elektronik", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Electronics", icon: "https://img.icons8.com/ios/50/laptop.png"},
+    {name: "Fashion", icon: "https://cdn.icon-icons.com/icons2/1118/PNG/512/1486145173-dress_79394.png"},
+    {name: "Garden", icon: "https://icon-library.com/images/garden-icon-png/garden-icon-png-1.jpg"},
+    {name: "Furniture", icon: "https://icon-library.com/images/furniture-icon-png/furniture-icon-png-8.jpg"},
+    {name: "Accessories", icon: "https://icon-library.com/images/diamond-ring-icon-png/diamond-ring-icon-png-10.jpg"},
+    {name: "Beauty", icon: "https://icon-library.com/images/icon-lipstick/icon-lipstick-28.jpg"},
+    {name: "Sport", icon: "https://icon-library.com/images/soccerball-icon/soccerball-icon-8.jpg"},
+    {name: "Book", icon: "https://icon-library.com/images/small-book-icon/small-book-icon-0.jpg"},
   ],
   recommend:[
     {
       id: 1,
       name: "Asus ROG Strix G12",
-      image: "https://rog.asus.com/media/1704423805683.jpg",
+      image: "https://www.droidlime.com/wp-content/uploads/2024/05/Asus-ROG-Strix-G12.jpg",
     },
     {
       id: 2,
@@ -85,7 +76,7 @@ const initialState = {
     {
       id: 3,
       name: "Asus ROG Strix G12",
-      image: "https://rog.asus.com/media/1704423805683.jpg",
+      image: "https://i.ytimg.com/vi/PFQZErHiRs8/maxresdefault.jpg",
     },
     {
       id: 4,
