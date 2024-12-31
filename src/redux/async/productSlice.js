@@ -14,7 +14,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-1",
       price: 100,
       priceBeforeDiscount: 130,
@@ -36,7 +36,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-2",
       price: 120,
       priceBeforeDiscount: null,
@@ -58,7 +58,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-3",
       price: 150,
       priceBeforeDiscount: 200,
@@ -80,7 +80,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-4",
       price: 90,
       priceBeforeDiscount: null,
@@ -102,7 +102,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-5",
       price: 200,
       priceBeforeDiscount: 250,
@@ -124,7 +124,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-6",
       price: 75,
       priceBeforeDiscount: 100,
@@ -146,7 +146,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-7",
       price: 300,
       priceBeforeDiscount: 400,
@@ -168,7 +168,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-8",
       price: 140,
       priceBeforeDiscount: null,
@@ -190,7 +190,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-9",
       price: 180,
       priceBeforeDiscount: 220,
@@ -212,7 +212,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-10",
       price: 220,
       priceBeforeDiscount: 300,
@@ -234,7 +234,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-11",
       price: 65,
       priceBeforeDiscount: 80,
@@ -256,7 +256,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-12",
       price: 300,
       priceBeforeDiscount: 360,
@@ -278,7 +278,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-13",
       price: 110,
       priceBeforeDiscount: 150,
@@ -300,7 +300,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-14",
 
       price: 275,
@@ -323,7 +323,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-15",
 
       price: 420,
@@ -346,7 +346,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-16",
 
       price: 130,
@@ -369,7 +369,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-17",
 
       price: 90,
@@ -392,7 +392,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-18",
 
       price: 50,
@@ -415,7 +415,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-19",
 
       price: 350,
@@ -438,7 +438,7 @@ const initialState = {
         "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=60",
       ],
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl. Sed euismod, nunc nec ultricies tincidunt, nisl nisl aliquam nunc, vitae aliquam nisl nisl sit amet nisl.",
+        "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
       sku: "product-20",
       price: 260,
       priceBeforeDiscount: 300,

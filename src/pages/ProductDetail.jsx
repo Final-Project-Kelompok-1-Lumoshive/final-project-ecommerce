@@ -68,8 +68,8 @@ const ProductDetail = () => {
             modules={[FreeMode, Navigation, Thumbs]}
           >
             {item.image.map((image, index) => (
-              <SwiperSlide key={index} className="rounded overflow-hidden">
-                <img src={image} className="object-cover min-h-[100px]" />
+              <SwiperSlide key={index} className="rounded overflow-hidden min-h-24 max-h-24">
+                <img src={image} className="object-cover" />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -125,7 +125,7 @@ const ProductDetail = () => {
               <button
                 onClick={() => setQuantity(quantity - 1)}
                 disabled={quantity === 1}
-                className={`flex items-center justify-center h-8 w-10 px-2 ${
+                className={`flex items-center justify-center h-10 w-10 px-2 ${
                   quantity === 1
                     ? "bg-white border-black/[.5]"
                     : "bg-red border-red"
@@ -141,12 +141,12 @@ const ProductDetail = () => {
                 type="text"
                 value={quantity}
                 readOnly
-                className="w-12 h-8 border-y border-black/[.5] text-center outline-none"
+                className="w-12 h-10 border-y border-black/[.5] text-center outline-none"
               />
               <button
                 onClick={() => setQuantity(quantity + 1)}
                 disabled={quantity === item.stock}
-                className={`relative flex items-center justify-center h-8 w-10 px-2 ${
+                className={`relative flex items-center justify-center h-10 w-10 px-2 ${
                   quantity === item.stock
                     ? "bg-white border-black/[.5]"
                     : "bg-red border-red"
@@ -165,12 +165,12 @@ const ProductDetail = () => {
               </button>
             </div>
             <div className="font-poppins flex w-full gap-1 items-center">
-              <button className="flex justify-center items-center w-full h-8 bg-red text-medium text-white rounded active:brightness-90">
+              <button className="flex justify-center items-center w-full h-10 bg-red text-medium text-white rounded active:brightness-90">
                 Add to Cart
               </button>
               <button
                 onClick={() => setIsWishlisted(!isWishlisted)}
-                className={`flex justify-center items-center h-8 ${
+                className={`flex justify-center items-center h-10 ${
                   isWishlisted
                     ? "bg-red text-white border-red"
                     : "border-black/[.5]"
@@ -276,7 +276,7 @@ const ProductDetail = () => {
             <button
               onClick={() => setQuantity(quantity - 1)}
               disabled={quantity === 1}
-              className={`flex items-center justify-center h-8 w-10 px-2 ${
+              className={`flex items-center justify-center h-10 w-10 px-2 ${
                 quantity === 1
                   ? "bg-white border-black/[.5]"
                   : "bg-red border-red"
@@ -292,12 +292,12 @@ const ProductDetail = () => {
               type="text"
               value={quantity}
               readOnly
-              className="w-12 h-8 border-y border-black/[.5] text-center outline-none"
+              className="w-12 h-10 border-y border-black/[.5] text-center outline-none"
             />
             <button
               onClick={() => setQuantity(quantity + 1)}
               disabled={quantity === item.stock}
-              className={`relative flex items-center justify-center h-8 w-10 px-2 ${
+              className={`relative flex items-center justify-center h-10 w-10 px-2 ${
                 quantity === item.stock
                   ? "bg-white border-black/[.5]"
                   : "bg-red border-red"
