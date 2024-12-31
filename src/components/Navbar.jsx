@@ -69,6 +69,15 @@ const Navbar = () => {
     };
   }, []);
 
+  // Cart
+  const cartItems = useSelector((state) => state.cart.items);
+
+  // Calculate total items in the cart
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <nav className="fixed flex w-full flex-col z-50">
       <div className="relative font-poppins text-sm bg-black text-white justify-center items-center py-4">
@@ -196,8 +205,13 @@ const Navbar = () => {
             <Link className="max-lg:hidden hover:text-red" to={"/wishlist"}>
               <IoHeartOutline size={28} />
             </Link>
-            <Link className="hover:text-red" to={"/cart"}>
+            <Link className="hover:text-red relative" to={"/cart"}>
               <IoCartOutline size={28} />
+              {totalQuantity > 0 && (
+                <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red text-white text-xs font-bold px-2 py-1 rounded-full">
+                  {totalQuantity}
+                </span>
+              )}
             </Link>
             <div
               onMouseOver={() => setIsOpenProfile(true)}
@@ -366,12 +380,22 @@ const Navbar = () => {
                 </Link>
               </ul>
               <div className="w-full px-6">
-                <div className={`${auth ? "flex" : "hidden"} items-center w-full gap-4`}>
-                  <div className="bg-red text-white rounded-full p-2"><BsPerson size={28} /></div>
+                <div
+                  className={`${
+                    auth ? "flex" : "hidden"
+                  } items-center w-full gap-4`}
+                >
+                  <div className="bg-red text-white rounded-full p-2">
+                    <BsPerson size={28} />
+                  </div>
                   <h2 className="text-lg font-semibold">John Doe</h2>
                 </div>
                 <div className="w-full h-0.5 bg-black/[.3] rounded-full my-4"></div>
-                <div className={`${auth ? "hidden" : "flex"} justify-end gap-3 w-full mt-6 py-6`}>
+                <div
+                  className={`${
+                    auth ? "hidden" : "flex"
+                  } justify-end gap-3 w-full mt-6 py-6`}
+                >
                   <Link
                     to="/auth"
                     onClick={toggleMenu}

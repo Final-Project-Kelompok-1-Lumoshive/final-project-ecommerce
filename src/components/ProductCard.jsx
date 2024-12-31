@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { IoHeartOutline, IoTrashOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-import {getProduct} from "../redux/async/productSlice";
+import { getProduct } from "../redux/async/productSlice";
 import {
   addToWishlist,
   removeFromWishlist,
@@ -12,7 +12,7 @@ import { addToCart } from "../redux/async/cartSlice";
 const ProductCard = ({ product, isInWishlistSection = false }) => {
   const {
     sku,
-    image = "",
+    image = [],
     title = "Unknown Product",
     discount = 0,
     price = 0,
@@ -41,18 +41,6 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
       dispatch(addToWishlist(product));
     }
   };
-
-  // Wishlist icon
-
-  const wishlistIcon = isWishlisted ? (
-    isInWishlistSection ? (
-      <FaTrash className="text-black hover:text-gray-600" size={20} />
-    ) : (
-      <FaHeart className="text-red hover:text-orange-400" size={20} />
-    )
-  ) : (
-    <FaHeart className="text-gray-400 hover:text-orange-500" size={20} />
-  );
 
   // Add to Cart handler
   const handleAddToCart = (event) => {
@@ -94,7 +82,11 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
 
   return (
     <div className="relative flex w-full max-w-md flex-col overflow-hidden bg-white group">
-      <Link to={`/product/${sku}`} onClick={() => dispatch(getProduct(sku))} className="relative mt-3 flex lg:h-60 h-44 overflow-hidden rounded">
+      <Link
+        to={`/product/${sku}`}
+        onClick={() => dispatch(getProduct(sku))}
+        className="relative mt-3 flex lg:h-60 h-44 overflow-hidden rounded"
+      >
         {/* Product Image */}
         <img
           className="object-cover w-full h-full rounded"
@@ -129,15 +121,18 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
         >
           {isWishlisted ? (
             isInWishlistSection ? (
-              <IoTrashOutline className="text-black hover:text-gray-600" size={20} />
+              <IoTrashOutline
+                className="text-white hover:text-gray-600"
+                size={20}
+              />
             ) : (
-              <IoHeartOutline className="text-white hover:brightness-125" size={20} />
+              <IoHeartOutline
+                className="text-white hover:brightness-125"
+                size={20}
+              />
             )
           ) : (
-            <IoHeartOutline
-              className="text-black hover:text-red"
-              size={20}
-            />
+            <IoHeartOutline className="text-black hover:text-red" size={20} />
           )}
         </button>
 
@@ -172,14 +167,18 @@ const ProductCard = ({ product, isInWishlistSection = false }) => {
 
       {/* Product Details */}
       <div className="mt-4 pb-5">
-        <Link to={`/product/${sku}`} onClick={() => dispatch(getProduct(sku))} className="block">
+        <Link
+          to={`/product/${sku}`}
+          onClick={() => dispatch(getProduct(sku))}
+          className="block"
+        >
           <h5 className="font-medium">{title}</h5>
         </Link>
         {/* Price and Rating Section */}
         <div className="mt-2 mb-5 flex items-center justify-start gap-x-4 gap-y-1 flex-wrap">
           {/* Price */}
           <p>
-            <span className="font-medium text-red text-black">${price}</span>
+            <span className="font-medium text-black">${price}</span>
             {priceBeforeDiscount && (
               <span className="font-medium text-black/[.5] line-through ml-2">
                 ${priceBeforeDiscount}
