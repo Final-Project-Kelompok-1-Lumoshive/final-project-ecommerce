@@ -258,7 +258,7 @@ const Navbar = () => {
               isOpenModal
                 ? "bg-black/[.2] z-50"
                 : "bg-transparent pointer-events-none"
-            } fixed bottom-0 top-0 left-0 right-0 flex items-center justify-center transition duration-300`}
+            } fixed bottom-0 top-0 left-0 right-0 flex lg:items-center items-end justify-center transition duration-300`}
           >
             <div
               className={`${
@@ -380,6 +380,7 @@ const Navbar = () => {
                 </Link>
               </ul>
               <div className="w-full px-6">
+                <div className="flex justify-between items-center w-full">
                 <div
                   className={`${
                     auth ? "flex" : "hidden"
@@ -389,6 +390,8 @@ const Navbar = () => {
                     <BsPerson size={28} />
                   </div>
                   <h2 className="text-lg font-semibold">John Doe</h2>
+                </div>
+                <button onClick={() => handleLogout()} className={`${auth ? "flex" : "hidden"} items-center gap-2 text-red font-semibold`}><TbLogout2 /> Logout</button>
                 </div>
                 <div className="w-full h-0.5 bg-black/[.3] rounded-full my-4"></div>
                 <div
