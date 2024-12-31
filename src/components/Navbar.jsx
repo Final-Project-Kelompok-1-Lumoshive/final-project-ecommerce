@@ -85,9 +85,9 @@ const Navbar = () => {
           {lang === "en"
             ? "Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!"
             : "Penawaran Panas Untuk Semua Baju Renang dan Pengiriman Express Gratis - Diskon 50%!"}
-          <a href="" className="mx-1 underline font-semibold">
+          <Link className="mx-1 underline font-semibold">
             {lang === "en" ? "Shop Now" : "Beli Sekarang"}
-          </a>
+          </Link>
         </div>
         <div className="max-md:hidden absolute lg:right-24 right-6 top-4">
           <button
@@ -161,7 +161,7 @@ const Navbar = () => {
                   : "hover:underline underline-offset-8"
               }
             >
-              <li>Contact</li>
+              <li>{lang === "en" ? "Contact" : "Kontak"}</li>
             </Link>
             <Link
               to={"/about"}
@@ -171,7 +171,7 @@ const Navbar = () => {
                   : "hover:underline underline-offset-8"
               }
             >
-              <li>About</li>
+              <li>{lang === "en" ? "About" : "Tentang"}</li>
             </Link>
             <Link
               to={"/auth"}
@@ -195,7 +195,7 @@ const Navbar = () => {
                 type="text"
                 value={search}
                 onChange={handleChange}
-                placeholder="What are you looking for?"
+                placeholder={lang === "en" ? "What are you looking for?" : "Cari produk"}
                 className="bg-transparent rounded outline-0 p-2 min-w-56"
               />
               <button className="absolute bottom-0 top-0 right-4">

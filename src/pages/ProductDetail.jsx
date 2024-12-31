@@ -19,6 +19,7 @@ import "swiper/css/thumbs";
 
 // import required modules
 import { Pagination, FreeMode, Navigation, Thumbs } from "swiper/modules";
+import SeoComponent from "../components/SeoComponent";
 
 const ProductDetail = () => {
   const { sku } = useParams();
@@ -42,6 +43,7 @@ const ProductDetail = () => {
 
   return (
     <div>
+      <SeoComponent page="productDetail" />
       <BreadCrumbs sku={sku} />
       <div className="flex max-lg:flex-col justify-between items-start gap-6 my-8">
         <div className="max-lg:hidden max-w-xl">
